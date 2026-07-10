@@ -14,38 +14,45 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewAvailableNumbersDataInner < ApiModelBase
-    # The country code of the number.
-    attr_accessor :country
+  class ViewAvailableNumbersData < ApiModelBase
+    # The total number of items available for viewing.
+    attr_accessor :total
 
-    # The country name of the number.
-    attr_accessor :country_name
+    # The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
+    attr_accessor :per_page
 
-    # The dedicated number.
-    attr_accessor :dedicated_number
+    # The current page number.
+    attr_accessor :current_page
 
-    # The setup price of the number.
-    attr_accessor :price_setup
+    # The last page number.
+    attr_accessor :last_page
 
-    # The monthly price of the number.
-    attr_accessor :price_monthly
+    # A URL of the next page. It will return **null** if there’s no next page.
+    attr_accessor :next_page_url
 
-    # The total price of the number.
-    attr_accessor :price_total
+    # A URL of the previous page. It will return **null** if there’s no previous page.
+    attr_accessor :prev_page_url
 
-    # The address requirement for the number.  <br> `local`: requires an address that corresponds  to the phone number's prefix.
-    attr_accessor :address_requirement
+    # The number of the first result in the current page.
+    attr_accessor :from
+
+    # The number of the last result in the current page.
+    attr_accessor :to
+
+    attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'country' => :'country',
-        :'country_name' => :'country_name',
-        :'dedicated_number' => :'dedicated_number',
-        :'price_setup' => :'price_setup',
-        :'price_monthly' => :'price_monthly',
-        :'price_total' => :'price_total',
-        :'address_requirement' => :'address_requirement'
+        :'total' => :'total',
+        :'per_page' => :'per_page',
+        :'current_page' => :'current_page',
+        :'last_page' => :'last_page',
+        :'next_page_url' => :'next_page_url',
+        :'prev_page_url' => :'prev_page_url',
+        :'from' => :'from',
+        :'to' => :'to',
+        :'data' => :'data'
       }
     end
 
@@ -62,65 +69,85 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'country' => :'String',
-        :'country_name' => :'String',
-        :'dedicated_number' => :'String',
-        :'price_setup' => :'String',
-        :'price_monthly' => :'String',
-        :'price_total' => :'String',
-        :'address_requirement' => :'String'
+        :'total' => :'Integer',
+        :'per_page' => :'Integer',
+        :'current_page' => :'Integer',
+        :'last_page' => :'Integer',
+        :'next_page_url' => :'String',
+        :'prev_page_url' => :'String',
+        :'from' => :'Integer',
+        :'to' => :'Integer',
+        :'data' => :'Array<ViewAvailableNumbersDataAllOfDataInner>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'address_requirement'
+        :'next_page_url',
+        :'prev_page_url',
       ])
+    end
+
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'Pagination'
+      ]
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAvailableNumbersDataInner` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAvailableNumbersData` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAvailableNumbersDataInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAvailableNumbersData`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'country')
-        self.country = attributes[:'country']
+      if attributes.key?(:'total')
+        self.total = attributes[:'total']
       end
 
-      if attributes.key?(:'country_name')
-        self.country_name = attributes[:'country_name']
+      if attributes.key?(:'per_page')
+        self.per_page = attributes[:'per_page']
       end
 
-      if attributes.key?(:'dedicated_number')
-        self.dedicated_number = attributes[:'dedicated_number']
+      if attributes.key?(:'current_page')
+        self.current_page = attributes[:'current_page']
       end
 
-      if attributes.key?(:'price_setup')
-        self.price_setup = attributes[:'price_setup']
+      if attributes.key?(:'last_page')
+        self.last_page = attributes[:'last_page']
       end
 
-      if attributes.key?(:'price_monthly')
-        self.price_monthly = attributes[:'price_monthly']
+      if attributes.key?(:'next_page_url')
+        self.next_page_url = attributes[:'next_page_url']
       end
 
-      if attributes.key?(:'price_total')
-        self.price_total = attributes[:'price_total']
+      if attributes.key?(:'prev_page_url')
+        self.prev_page_url = attributes[:'prev_page_url']
       end
 
-      if attributes.key?(:'address_requirement')
-        self.address_requirement = attributes[:'address_requirement']
+      if attributes.key?(:'from')
+        self.from = attributes[:'from']
+      end
+
+      if attributes.key?(:'to')
+        self.to = attributes[:'to']
+      end
+
+      if attributes.key?(:'data')
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
+        end
       end
     end
 
@@ -144,13 +171,15 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          country == o.country &&
-          country_name == o.country_name &&
-          dedicated_number == o.dedicated_number &&
-          price_setup == o.price_setup &&
-          price_monthly == o.price_monthly &&
-          price_total == o.price_total &&
-          address_requirement == o.address_requirement
+          total == o.total &&
+          per_page == o.per_page &&
+          current_page == o.current_page &&
+          last_page == o.last_page &&
+          next_page_url == o.next_page_url &&
+          prev_page_url == o.prev_page_url &&
+          from == o.from &&
+          to == o.to &&
+          data == o.data
     end
 
     # @see the `==` method
@@ -162,7 +191,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [country, country_name, dedicated_number, price_setup, price_monthly, price_total, address_requirement].hash
+      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data].hash
     end
 
     # Builds the object from hash

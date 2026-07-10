@@ -11,10 +11,10 @@
 | **from** | **String** | The sender&#39;s phone number. | [optional] |
 | **lang** | **String** | The language of the message. | [optional] |
 | **voice** | **String** | The voice of the message. | [optional] |
-| **schedule** | **Float** | The timestamp when the message should be sent. | [optional] |
+| **schedule** | **String** | The timestamp when the message should be sent. | [optional] |
 | **message_id** | **String** | The ID of the message. | [optional] |
-| **message_parts** | **Float** | The number of parts in the message. | [optional] |
-| **message_price** | **Float** | The price of the message. | [optional] |
+| **message_parts** | **String** | The number of parts in the message. | [optional] |
+| **message_price** | **String** | The price of the message. | [optional] |
 | **custom_string** | **String** | The custom string of the message. | [optional] |
 | **user_id** | **Float** | The ID of the user. | [optional] |
 | **subaccount_id** | **Float** | The ID of the subaccount. | [optional] |

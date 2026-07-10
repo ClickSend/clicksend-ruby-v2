@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **package_id** | **Float** | The ID of the package. | [optional] |
-| **package_price** | **Float** | The price of the package. | [optional] |
+| **package_price** | **String** | The price of the package. | [optional] |
 | **price_rate** | **Integer** | The pricing tier used to determine the cost per message. | [optional] |
 | **sms_price** | **Float** | The price of the SMS. | [optional] |
 | **sms_quantity** | **Float** | The quantity of the SMS. | [optional] |

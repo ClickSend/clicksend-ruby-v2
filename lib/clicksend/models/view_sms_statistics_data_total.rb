@@ -43,7 +43,7 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'outbound' => :'ViewVoiceStatisticsDataStatsInnerOutbound',
+        :'outbound' => :'ViewVoiceStatisticsDataTotalOutbound',
         :'inbound' => :'CancelAllSmsData',
         :'bounced' => :'CancelAllSmsData'
       }

@@ -18,7 +18,7 @@ instance = ClickSend::ViewVoiceLanguages.new(
   http_code: 200,
   response_code: SUCCESS,
   response_msg: Here are the possible languages.,
-  data: [{&quot;code&quot;:&quot;en-us&quot;,&quot;country&quot;:&quot;English, US&quot;,&quot;gender&quot;:[&quot;male&quot;,&quot;female&quot;]},{&quot;code&quot;:&quot;en-au&quot;,&quot;country&quot;:&quot;English, Australia&quot;,&quot;gender&quot;:[&quot;male&quot;,&quot;female&quot;]}]
+  data: [{&quot;code&quot;:&quot;en-us&quot;,&quot;country&quot;:&quot;English, US&quot;,&quot;gender&quot;:&quot;male&quot;},{&quot;code&quot;:&quot;en-au&quot;,&quot;country&quot;:&quot;English, Australia&quot;,&quot;gender&quot;:&quot;female&quot;}]
 )
 ```
 

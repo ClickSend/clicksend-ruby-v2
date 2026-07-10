@@ -14,18 +14,38 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewVoiceStatisticsDataStatsInnerOutbound < ApiModelBase
-    # The count of outbound calls.
-    attr_accessor :count
+  class ViewAvailableNumbersDataAllOfDataInner < ApiModelBase
+    # The country code of the number.
+    attr_accessor :country
 
-    # The price of outbound calls.
-    attr_accessor :price
+    # The country name of the number.
+    attr_accessor :country_name
+
+    # The dedicated number.
+    attr_accessor :dedicated_number
+
+    # The setup price of the number.
+    attr_accessor :price_setup
+
+    # The monthly price of the number.
+    attr_accessor :price_monthly
+
+    # The total price of the number.
+    attr_accessor :price_total
+
+    # The address requirement for the number.  <br> `local`: requires an address that corresponds  to the phone number's prefix.
+    attr_accessor :address_requirement
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'price' => :'price'
+        :'country' => :'country',
+        :'country_name' => :'country_name',
+        :'dedicated_number' => :'dedicated_number',
+        :'price_setup' => :'price_setup',
+        :'price_monthly' => :'price_monthly',
+        :'price_total' => :'price_total',
+        :'address_requirement' => :'address_requirement'
       }
     end
 
@@ -42,14 +62,20 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer',
-        :'price' => :'Float'
+        :'country' => :'String',
+        :'country_name' => :'String',
+        :'dedicated_number' => :'String',
+        :'price_setup' => :'String',
+        :'price_monthly' => :'String',
+        :'price_total' => :'String',
+        :'address_requirement' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'address_requirement'
       ])
     end
 
@@ -57,24 +83,44 @@ module ClickSend
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewVoiceStatisticsDataStatsInnerOutbound` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAvailableNumbersDataAllOfDataInner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewVoiceStatisticsDataStatsInnerOutbound`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAvailableNumbersDataAllOfDataInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.key?(:'country')
+        self.country = attributes[:'country']
       end
 
-      if attributes.key?(:'price')
-        self.price = attributes[:'price']
+      if attributes.key?(:'country_name')
+        self.country_name = attributes[:'country_name']
+      end
+
+      if attributes.key?(:'dedicated_number')
+        self.dedicated_number = attributes[:'dedicated_number']
+      end
+
+      if attributes.key?(:'price_setup')
+        self.price_setup = attributes[:'price_setup']
+      end
+
+      if attributes.key?(:'price_monthly')
+        self.price_monthly = attributes[:'price_monthly']
+      end
+
+      if attributes.key?(:'price_total')
+        self.price_total = attributes[:'price_total']
+      end
+
+      if attributes.key?(:'address_requirement')
+        self.address_requirement = attributes[:'address_requirement']
       end
     end
 
@@ -98,8 +144,13 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          price == o.price
+          country == o.country &&
+          country_name == o.country_name &&
+          dedicated_number == o.dedicated_number &&
+          price_setup == o.price_setup &&
+          price_monthly == o.price_monthly &&
+          price_total == o.price_total &&
+          address_requirement == o.address_requirement
     end
 
     # @see the `==` method
@@ -111,7 +162,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [count, price].hash
+      [country, country_name, dedicated_number, price_setup, price_monthly, price_total, address_requirement].hash
     end
 
     # Builds the object from hash

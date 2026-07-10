@@ -48,7 +48,7 @@ module ClickSend
     def self.openapi_types
       {
         :'date' => :'Float',
-        :'outbound' => :'ViewVoiceStatisticsDataStatsInnerOutbound',
+        :'outbound' => :'ViewVoiceStatisticsDataTotalOutbound',
         :'inbound' => :'CancelAllSmsData',
         :'bounced' => :'CancelAllSmsData'
       }

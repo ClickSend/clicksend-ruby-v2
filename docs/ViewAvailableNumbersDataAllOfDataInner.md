@@ -1,4 +1,4 @@
-# ClickSend::ViewAvailableNumbersDataInner
+# ClickSend::ViewAvailableNumbersDataAllOfDataInner
 
 ## Properties
 
@@ -17,7 +17,7 @@
 ```ruby
 require 'clicksend'
 
-instance = ClickSend::ViewAvailableNumbersDataInner.new(
+instance = ClickSend::ViewAvailableNumbersDataAllOfDataInner.new(
   country: null,
   country_name: null,
   dedicated_number: null,

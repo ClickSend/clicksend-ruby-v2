@@ -65,15 +65,15 @@ module ClickSend
     def self.openapi_types
       {
         :'sms' => :'Array<ViewAccountUsageDataSmsInner>',
-        :'voice' => :'Array<ViewAccountUsageDataSmsInner>',
-        :'fax' => :'Array<ViewAccountUsageDataSmsInner>',
-        :'post' => :'Array<ViewAccountUsageDataSmsInner>',
+        :'voice' => :'Array<ViewAccountUsageDataVoiceInner>',
+        :'fax' => :'Array<ViewAccountUsageDataVoiceInner>',
+        :'post' => :'Array<ViewAccountUsageDataVoiceInner>',
         :'email' => :'Array<ViewAccountUsageDataEmailInner>',
         :'sms_total' => :'ViewAccountUsageDataSmsTotal',
         :'voice_total' => :'ViewAccountUsageDataSmsTotal',
         :'fax_total' => :'ViewAccountUsageDataSmsTotal',
         :'post_total' => :'ViewAccountUsageDataSmsTotal',
-        :'email_total' => :'ViewVoiceStatisticsDataTotalOutbound'
+        :'email_total' => :'ViewAccountUsageDataEmailTotal'
       }
     end
 

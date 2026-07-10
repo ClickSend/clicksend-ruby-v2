@@ -21,6 +21,7 @@ module ClickSend
     # The country of the language.
     attr_accessor :country
 
+    # The gender of the language.
     attr_accessor :gender
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -47,7 +48,7 @@ module ClickSend
       {
         :'code' => :'String',
         :'country' => :'String',
-        :'gender' => :'Array<String>'
+        :'gender' => :'String'
       }
     end
 
@@ -82,9 +83,7 @@ module ClickSend
       end
 
       if attributes.key?(:'gender')
-        if (value = attributes[:'gender']).is_a?(Array)
-          self.gender = value
-        end
+        self.gender = attributes[:'gender']
       end
     end
 

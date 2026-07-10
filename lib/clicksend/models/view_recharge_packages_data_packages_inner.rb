@@ -135,7 +135,7 @@ module ClickSend
     def self.openapi_types
       {
         :'package_id' => :'Float',
-        :'package_price' => :'Float',
+        :'package_price' => :'String',
         :'price_rate' => :'Integer',
         :'sms_price' => :'Float',
         :'sms_quantity' => :'Float',

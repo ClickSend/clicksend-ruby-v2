@@ -52,7 +52,7 @@ module ClickSend
         :'http_code' => :'Integer',
         :'response_code' => :'String',
         :'response_msg' => :'String',
-        :'data' => :'Array<Contact>'
+        :'data' => :'ViewListContactsData'
       }
     end
 
@@ -91,9 +91,7 @@ module ClickSend
       end
 
       if attributes.key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
-        end
+        self.data = attributes[:'data']
       end
     end
 

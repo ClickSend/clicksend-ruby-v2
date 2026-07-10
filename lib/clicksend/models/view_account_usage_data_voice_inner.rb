@@ -14,18 +14,26 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewVoiceStatisticsDataTotalOutbound < ApiModelBase
-    # The total count of outbound calls.
-    attr_accessor :count
+  class ViewAccountUsageDataVoiceInner < ApiModelBase
+    # The subaccount identifier.
+    attr_accessor :subaccount_id
 
-    # The total price of outbound calls.
-    attr_accessor :price
+    # The username associated with the subaccount.
+    attr_accessor :username
+
+    # The total count of voice calls.
+    attr_accessor :total_count
+
+    # The total price of voice calls.
+    attr_accessor :total_price
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'price' => :'price'
+        :'subaccount_id' => :'subaccount_id',
+        :'username' => :'username',
+        :'total_count' => :'total_count',
+        :'total_price' => :'total_price'
       }
     end
 
@@ -42,8 +50,10 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'count' => :'Integer',
-        :'price' => :'Float'
+        :'subaccount_id' => :'Integer',
+        :'username' => :'String',
+        :'total_count' => :'String',
+        :'total_price' => :'String'
       }
     end
 
@@ -57,24 +67,32 @@ module ClickSend
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewVoiceStatisticsDataTotalOutbound` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAccountUsageDataVoiceInner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewVoiceStatisticsDataTotalOutbound`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAccountUsageDataVoiceInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.key?(:'subaccount_id')
+        self.subaccount_id = attributes[:'subaccount_id']
       end
 
-      if attributes.key?(:'price')
-        self.price = attributes[:'price']
+      if attributes.key?(:'username')
+        self.username = attributes[:'username']
+      end
+
+      if attributes.key?(:'total_count')
+        self.total_count = attributes[:'total_count']
+      end
+
+      if attributes.key?(:'total_price')
+        self.total_price = attributes[:'total_price']
       end
     end
 
@@ -98,8 +116,10 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          price == o.price
+          subaccount_id == o.subaccount_id &&
+          username == o.username &&
+          total_count == o.total_count &&
+          total_price == o.total_price
     end
 
     # @see the `==` method
@@ -111,7 +131,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [count, price].hash
+      [subaccount_id, username, total_count, total_price].hash
     end
 
     # Builds the object from hash

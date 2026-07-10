@@ -53,7 +53,7 @@ module ClickSend
         :'subaccount_id' => :'Integer',
         :'username' => :'String',
         :'total_count' => :'String',
-        :'total_price' => :'String'
+        :'total_price' => :'Float'
       }
     end
 

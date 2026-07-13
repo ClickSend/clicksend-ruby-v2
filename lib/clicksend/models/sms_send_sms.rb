@@ -135,6 +135,10 @@ module ClickSend
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'from_email',
+        :'list_id',
+        :'custom_string',
+        :'contact_id',
       ])
     end
 

@@ -50,7 +50,7 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'http_code' => :'String',
+        :'http_code' => :'Integer',
         :'response_code' => :'String',
         :'response_msg' => :'String',
         :'data' => :'Object'

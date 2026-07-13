@@ -20,7 +20,7 @@ instance = ClickSend::SendSmsData.new(
   total_price: 0.0792,
   total_count: 1,
   queued_count: 1,
-  messages: [{&quot;direction&quot;:&quot;out&quot;,&quot;date&quot;:&quot;1721099039,&quot;,&quot;to&quot;:&quot;+61411111111&quot;,&quot;body&quot;:&quot;test message&quot;,&quot;from&quot;:&quot;+61431111112&quot;,&quot;schedule&quot;:1721099039,&quot;message_id&quot;:&quot;1ABC3200-C38C-6308-BE4B-C7C51D01DCF0&quot;,&quot;message_parts&quot;:1,&quot;message_price&quot;:0.0792,&quot;from_email&quot;:null,&quot;list_id&quot;:null,&quot;custom_string&quot;:&quot;&quot;,&quot;contact_id&quot;:null,&quot;user_id&quot;:123456,&quot;subaccount_id&quot;:123456,&quot;is_shared_system_number&quot;:false,&quot;country&quot;:&quot;AU&quot;,&quot;carrier&quot;:&quot;Vodafone&quot;,&quot;status&quot;:&quot;SUCCESS&quot;}],
+  messages: [{&quot;direction&quot;:&quot;out&quot;,&quot;date&quot;:&quot;1721099039,&quot;,&quot;to&quot;:&quot;+61411111111&quot;,&quot;body&quot;:&quot;test message&quot;,&quot;from&quot;:&quot;+61431111112&quot;,&quot;schedule&quot;:1721099039,&quot;message_id&quot;:&quot;1ABC3200-C38C-6308-BE4B-C7C51D01DCF0&quot;,&quot;message_parts&quot;:1,&quot;message_price&quot;:&quot;0.0792&quot;,&quot;from_email&quot;:null,&quot;list_id&quot;:null,&quot;custom_string&quot;:&quot;&quot;,&quot;contact_id&quot;:null,&quot;user_id&quot;:123456,&quot;subaccount_id&quot;:123456,&quot;is_shared_system_number&quot;:false,&quot;country&quot;:&quot;AU&quot;,&quot;carrier&quot;:&quot;Vodafone&quot;,&quot;status&quot;:&quot;SUCCESS&quot;}],
   _currency: null,
   blocked_count: 0
 )

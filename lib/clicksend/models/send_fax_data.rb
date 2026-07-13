@@ -54,8 +54,8 @@ module ClickSend
     def self.openapi_types
       {
         :'total_price' => :'Float',
-        :'total_count' => :'String',
-        :'queued_count' => :'String',
+        :'total_count' => :'Integer',
+        :'queued_count' => :'Integer',
         :'messages' => :'Array<Fax>',
         :'_currency' => :'Currency'
       }

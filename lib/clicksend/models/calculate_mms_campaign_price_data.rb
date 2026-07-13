@@ -48,7 +48,7 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'total_count' => :'String',
+        :'total_count' => :'Integer',
         :'total_price' => :'String',
         :'data' => :'CalculateMmsCampaignPriceDataData',
         :'_currency' => :'Currency'

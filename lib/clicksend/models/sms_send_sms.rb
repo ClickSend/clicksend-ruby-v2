@@ -118,7 +118,7 @@ module ClickSend
         :'schedule' => :'Integer',
         :'message_id' => :'String',
         :'message_parts' => :'Integer',
-        :'message_price' => :'Float',
+        :'message_price' => :'String',
         :'from_email' => :'String',
         :'list_id' => :'String',
         :'custom_string' => :'String',

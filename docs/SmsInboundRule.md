@@ -13,6 +13,7 @@
 | **action_address** | **String** | The action address to be used in the inbound rule. | [optional] |
 | **body** | **String** | The body of the inbound rule. | [optional] |
 | **enabled** | **Integer** | The status of the inbound rule. | [optional] |
+| **webhook_type** | **String** | The format used when calling the webhook (e.g. post, json). | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = ClickSend::SmsInboundRule.new(
   action: CREATE_CONTACT_PLUS_EMAIL,
   action_address: 430,
   body: Hello, World!,
-  enabled: 1
+  enabled: 1,
+  webhook_type: json
 )
 ```
 

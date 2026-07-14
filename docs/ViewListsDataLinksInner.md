@@ -1,4 +1,4 @@
-# ClickSend::ViewSmsInboundAutomationsDataAllOfLinksInner
+# ClickSend::ViewListsDataLinksInner
 
 ## Properties
 
@@ -14,7 +14,7 @@
 ```ruby
 require 'clicksend'
 
-instance = ClickSend::ViewSmsInboundAutomationsDataAllOfLinksInner.new(
+instance = ClickSend::ViewListsDataLinksInner.new(
   url: null,
   label: null,
   page: null,

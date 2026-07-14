@@ -1,4 +1,4 @@
-# ClickSend::ViewSmsStatisticsDataStatInner
+# ClickSend::ViewSmsStatisticsDataStatsInner
 
 ## Properties
 
@@ -6,15 +6,15 @@
 | ---- | ---- | ----------- | ----- |
 | **date** | **Float** | The date. | [optional] |
 | **outbound** | [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] |
-| **inbound** | [**CancelAllSmsData**](CancelAllSmsData.md) |  | [optional] |
-| **bounced** | [**CancelAllSmsData**](CancelAllSmsData.md) |  | [optional] |
+| **inbound** | [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] |
+| **bounced** | [**ViewVoiceStatisticsDataTotalOutbound**](ViewVoiceStatisticsDataTotalOutbound.md) |  | [optional] |
 
 ## Example
 
 ```ruby
 require 'clicksend'
 
-instance = ClickSend::ViewSmsStatisticsDataStatInner.new(
+instance = ClickSend::ViewSmsStatisticsDataStatsInner.new(
   date: 1436918400,
   outbound: null,
   inbound: null,

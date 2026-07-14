@@ -42,6 +42,9 @@ module ClickSend
     # The status of the inbound rule.
     attr_accessor :enabled
 
+    # The format used when calling the webhook (e.g. post, json).
+    attr_accessor :webhook_type
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,7 +56,8 @@ module ClickSend
         :'action' => :'action',
         :'action_address' => :'action_address',
         :'body' => :'body',
-        :'enabled' => :'enabled'
+        :'enabled' => :'enabled',
+        :'webhook_type' => :'webhook_type'
       }
     end
 
@@ -78,7 +82,8 @@ module ClickSend
         :'action' => :'String',
         :'action_address' => :'String',
         :'body' => :'String',
-        :'enabled' => :'Integer'
+        :'enabled' => :'Integer',
+        :'webhook_type' => :'String'
       }
     end
 
@@ -86,6 +91,7 @@ module ClickSend
     def self.openapi_nullable
       Set.new([
         :'body',
+        :'webhook_type'
       ])
     end
 
@@ -140,6 +146,10 @@ module ClickSend
       if attributes.key?(:'enabled')
         self.enabled = attributes[:'enabled']
       end
+
+      if attributes.key?(:'webhook_type')
+        self.webhook_type = attributes[:'webhook_type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -170,7 +180,8 @@ module ClickSend
           action == o.action &&
           action_address == o.action_address &&
           body == o.body &&
-          enabled == o.enabled
+          enabled == o.enabled &&
+          webhook_type == o.webhook_type
     end
 
     # @see the `==` method
@@ -182,7 +193,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [inbound_rule_id, dedicated_number, rule_name, message_search_type, message_search_term, action, action_address, body, enabled].hash
+      [inbound_rule_id, dedicated_number, rule_name, message_search_type, message_search_term, action, action_address, body, enabled, webhook_type].hash
     end
 
     # Builds the object from hash

@@ -15,7 +15,7 @@
 | **first_page_url** | **String** | The URL of the first page of records. | [optional] |
 | **last_page_url** | **String** | The URL of the last page of records. | [optional] |
 | **path** | **String** | The base URL path used to build pagination links. | [optional] |
-| **links** | [**Array&lt;ViewSmsInboundAutomationsDataAllOfLinksInner&gt;**](ViewSmsInboundAutomationsDataAllOfLinksInner.md) | The list of pagination links. | [optional] |
+| **links** | [**Array&lt;ViewListsDataLinksInner&gt;**](ViewListsDataLinksInner.md) | The list of pagination links. | [optional] |
 | **data** | [**Array&lt;SmsInboundRule&gt;**](SmsInboundRule.md) |  | [optional] |
 
 ## Example

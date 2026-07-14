@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **total** | [**ViewSmsStatisticsDataTotal**](ViewSmsStatisticsDataTotal.md) |  | [optional] |
-| **stat** | [**Array&lt;ViewSmsStatisticsDataStatInner&gt;**](ViewSmsStatisticsDataStatInner.md) |  | [optional] |
+| **stats** | [**Array&lt;ViewSmsStatisticsDataStatsInner&gt;**](ViewSmsStatisticsDataStatsInner.md) |  | [optional] |
 | **_currency** | [**Currency**](Currency.md) |  | [optional] |
 
 ## Example
@@ -15,7 +15,7 @@ require 'clicksend'
 
 instance = ClickSend::ViewSmsStatisticsData.new(
   total: null,
-  stat: null,
+  stats: null,
   _currency: null
 )
 ```

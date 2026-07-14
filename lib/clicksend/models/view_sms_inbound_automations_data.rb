@@ -96,7 +96,7 @@ module ClickSend
         :'first_page_url' => :'String',
         :'last_page_url' => :'String',
         :'path' => :'String',
-        :'links' => :'Array<ViewSmsInboundAutomationsDataAllOfLinksInner>',
+        :'links' => :'Array<ViewListsDataLinksInner>',
         :'data' => :'Array<SmsInboundRule>'
       }
     end

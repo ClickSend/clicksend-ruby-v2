@@ -46,7 +46,7 @@ module ClickSend
       {
         :'date' => :'Float',
         :'outbound' => :'ViewVoiceStatisticsDataTotalOutbound',
-        :'bounced' => :'CancelAllSmsData'
+        :'bounced' => :'ViewVoiceStatisticsDataTotalOutbound'
       }
     end
 

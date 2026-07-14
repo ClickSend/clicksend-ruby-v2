@@ -17,7 +17,7 @@ module ClickSend
   class ViewSmsStatisticsData < ApiModelBase
     attr_accessor :total
 
-    attr_accessor :stat
+    attr_accessor :stats
 
     attr_accessor :_currency
 
@@ -25,7 +25,7 @@ module ClickSend
     def self.attribute_map
       {
         :'total' => :'total',
-        :'stat' => :'stat',
+        :'stats' => :'stats',
         :'_currency' => :'_currency'
       }
     end
@@ -44,7 +44,7 @@ module ClickSend
     def self.openapi_types
       {
         :'total' => :'ViewSmsStatisticsDataTotal',
-        :'stat' => :'Array<ViewSmsStatisticsDataStatInner>',
+        :'stats' => :'Array<ViewSmsStatisticsDataStatsInner>',
         :'_currency' => :'Currency'
       }
     end
@@ -75,9 +75,9 @@ module ClickSend
         self.total = attributes[:'total']
       end
 
-      if attributes.key?(:'stat')
-        if (value = attributes[:'stat']).is_a?(Array)
-          self.stat = value
+      if attributes.key?(:'stats')
+        if (value = attributes[:'stats']).is_a?(Array)
+          self.stats = value
         end
       end
 
@@ -107,7 +107,7 @@ module ClickSend
       return true if self.equal?(o)
       self.class == o.class &&
           total == o.total &&
-          stat == o.stat &&
+          stats == o.stats &&
           _currency == o._currency
     end
 
@@ -120,7 +120,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total, stat, _currency].hash
+      [total, stats, _currency].hash
     end
 
     # Builds the object from hash

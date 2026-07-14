@@ -14,26 +14,23 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewSmsInboundAutomationsDataAllOfLinksInner < ApiModelBase
-    # The URL of this page link.
-    attr_accessor :url
+  class ViewSmsStatisticsDataStatsInner < ApiModelBase
+    # The date.
+    attr_accessor :date
 
-    # The display label for this page link.
-    attr_accessor :label
+    attr_accessor :outbound
 
-    # The page number this link points to.
-    attr_accessor :page
+    attr_accessor :inbound
 
-    # Whether this link represents the current page.
-    attr_accessor :active
+    attr_accessor :bounced
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'url' => :'url',
-        :'label' => :'label',
-        :'page' => :'page',
-        :'active' => :'active'
+        :'date' => :'date',
+        :'outbound' => :'outbound',
+        :'inbound' => :'inbound',
+        :'bounced' => :'bounced'
       }
     end
 
@@ -50,18 +47,16 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'url' => :'String',
-        :'label' => :'String',
-        :'page' => :'Integer',
-        :'active' => :'Boolean'
+        :'date' => :'Float',
+        :'outbound' => :'ViewVoiceStatisticsDataTotalOutbound',
+        :'inbound' => :'ViewVoiceStatisticsDataTotalOutbound',
+        :'bounced' => :'ViewVoiceStatisticsDataTotalOutbound'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'url',
-        :'page',
       ])
     end
 
@@ -69,32 +64,32 @@ module ClickSend
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewSmsInboundAutomationsDataAllOfLinksInner` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewSmsStatisticsDataStatsInner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewSmsInboundAutomationsDataAllOfLinksInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewSmsStatisticsDataStatsInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'url')
-        self.url = attributes[:'url']
+      if attributes.key?(:'date')
+        self.date = attributes[:'date']
       end
 
-      if attributes.key?(:'label')
-        self.label = attributes[:'label']
+      if attributes.key?(:'outbound')
+        self.outbound = attributes[:'outbound']
       end
 
-      if attributes.key?(:'page')
-        self.page = attributes[:'page']
+      if attributes.key?(:'inbound')
+        self.inbound = attributes[:'inbound']
       end
 
-      if attributes.key?(:'active')
-        self.active = attributes[:'active']
+      if attributes.key?(:'bounced')
+        self.bounced = attributes[:'bounced']
       end
     end
 
@@ -118,10 +113,10 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          url == o.url &&
-          label == o.label &&
-          page == o.page &&
-          active == o.active
+          date == o.date &&
+          outbound == o.outbound &&
+          inbound == o.inbound &&
+          bounced == o.bounced
     end
 
     # @see the `==` method
@@ -133,7 +128,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [url, label, page, active].hash
+      [date, outbound, inbound, bounced].hash
     end
 
     # Builds the object from hash

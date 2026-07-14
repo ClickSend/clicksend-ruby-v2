@@ -13,6 +13,7 @@
 | **from** | **Integer** | The number of the first result in the current page. | [optional] |
 | **to** | **Integer** | The number of the last result in the current page. | [optional] |
 | **data** | [**Array&lt;ViewYourNumbersDataAllOfDataInner&gt;**](ViewYourNumbersDataAllOfDataInner.md) |  | [optional] |
+| **_currency** | [**Currency**](Currency.md) |  | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = ClickSend::ViewYourNumbersData.new(
   prev_page_url: null,
   from: 1,
   to: 2,
-  data: [{&quot;dedicated_number&quot;:&quot;+61411111111&quot;,&quot;country&quot;:&quot;AU&quot;,&quot;price&quot;:&quot;18.59&quot;,&quot;_country_name&quot;:&quot;Australia&quot;,&quot;notes&quot;:null,&quot;type&quot;:&quot;sms&quot;,&quot;number_type&quot;:&quot;longcode&quot;,&quot;number_category&quot;:null,&quot;number_guid&quot;:&quot;60744953-781E-463C-A7FF-F194228674BB&quot;,&quot;form_submission_id&quot;:null,&quot;status&quot;:{&quot;value&quot;:0,&quot;label&quot;:&quot;REGISTRATION_NOT_REQUIRED&quot;,&quot;description&quot;:&quot;Your number is ready to go.&quot;,&quot;name&quot;:&quot;Ready to use&quot;}},{&quot;dedicated_number&quot;:&quot;+61422222222&quot;,&quot;country&quot;:&quot;AU&quot;,&quot;price&quot;:&quot;20.99&quot;,&quot;_country_name&quot;:&quot;Australia&quot;,&quot;notes&quot;:&quot;Business line&quot;,&quot;type&quot;:&quot;mms&quot;,&quot;number_type&quot;:&quot;longcode&quot;,&quot;number_category&quot;:null,&quot;number_guid&quot;:&quot;83955064-892F-574D-B8GG-G2053339785CC&quot;,&quot;form_submission_id&quot;:null,&quot;status&quot;:{&quot;value&quot;:1,&quot;label&quot;:&quot;REGISTRATION_NOT_INITIATED&quot;,&quot;description&quot;:&quot;Your number is unregistered. You will not be able to send messages to certain countries.&quot;,&quot;name&quot;:&quot;Unregistered&quot;}}]
+  data: [{&quot;dedicated_number&quot;:&quot;+61411111111&quot;,&quot;country&quot;:&quot;AU&quot;,&quot;price&quot;:&quot;18.59&quot;,&quot;_country_name&quot;:&quot;Australia&quot;,&quot;notes&quot;:null,&quot;type&quot;:&quot;sms&quot;,&quot;number_type&quot;:&quot;longcode&quot;,&quot;number_category&quot;:null,&quot;number_guid&quot;:&quot;60744953-781E-463C-A7FF-F194228674BB&quot;,&quot;form_submission_id&quot;:null,&quot;status&quot;:{&quot;value&quot;:0,&quot;label&quot;:&quot;REGISTRATION_NOT_REQUIRED&quot;,&quot;description&quot;:&quot;Your number is ready to go.&quot;,&quot;name&quot;:&quot;Ready to use&quot;}},{&quot;dedicated_number&quot;:&quot;+61422222222&quot;,&quot;country&quot;:&quot;AU&quot;,&quot;price&quot;:&quot;20.99&quot;,&quot;_country_name&quot;:&quot;Australia&quot;,&quot;notes&quot;:&quot;Business line&quot;,&quot;type&quot;:&quot;mms&quot;,&quot;number_type&quot;:&quot;longcode&quot;,&quot;number_category&quot;:null,&quot;number_guid&quot;:&quot;83955064-892F-574D-B8GG-G2053339785CC&quot;,&quot;form_submission_id&quot;:null,&quot;status&quot;:{&quot;value&quot;:1,&quot;label&quot;:&quot;REGISTRATION_NOT_INITIATED&quot;,&quot;description&quot;:&quot;Your number is unregistered. You will not be able to send messages to certain countries.&quot;,&quot;name&quot;:&quot;Unregistered&quot;}}],
+  _currency: null
 )
 ```
 

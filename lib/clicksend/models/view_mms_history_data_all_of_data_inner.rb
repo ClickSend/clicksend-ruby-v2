@@ -27,6 +27,15 @@ module ClickSend
     # The body of the message.
     attr_accessor :body
 
+    # The subject of the message.
+    attr_accessor :subject
+
+    # The priority of the message.
+    attr_accessor :priority
+
+    # A temporary, signed URL to download the message's media attachment.
+    attr_accessor :_media_file_url
+
     # The status of the message.
     attr_accessor :status
 
@@ -35,6 +44,9 @@ module ClickSend
 
     # The schedule time of the message.
     attr_accessor :schedule
+
+    # The Unix timestamp when the message was added.
+    attr_accessor :date_added
 
     # The status code (if applicable).
     attr_accessor :status_code
@@ -97,9 +109,13 @@ module ClickSend
         :'date' => :'date',
         :'to' => :'to',
         :'body' => :'body',
+        :'subject' => :'subject',
+        :'priority' => :'priority',
+        :'_media_file_url' => :'_media_file_url',
         :'status' => :'status',
         :'from' => :'from',
         :'schedule' => :'schedule',
+        :'date_added' => :'date_added',
         :'status_code' => :'status_code',
         :'status_text' => :'status_text',
         :'error_code' => :'error_code',
@@ -138,9 +154,13 @@ module ClickSend
         :'date' => :'String',
         :'to' => :'String',
         :'body' => :'String',
+        :'subject' => :'String',
+        :'priority' => :'Integer',
+        :'_media_file_url' => :'String',
         :'status' => :'String',
         :'from' => :'String',
         :'schedule' => :'String',
+        :'date_added' => :'Integer',
         :'status_code' => :'String',
         :'status_text' => :'String',
         :'error_code' => :'String',
@@ -165,6 +185,8 @@ module ClickSend
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'subject',
+        :'_media_file_url',
         :'status_code',
         :'status_text',
         :'error_code',
@@ -205,6 +227,18 @@ module ClickSend
         self.body = attributes[:'body']
       end
 
+      if attributes.key?(:'subject')
+        self.subject = attributes[:'subject']
+      end
+
+      if attributes.key?(:'priority')
+        self.priority = attributes[:'priority']
+      end
+
+      if attributes.key?(:'_media_file_url')
+        self._media_file_url = attributes[:'_media_file_url']
+      end
+
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
@@ -215,6 +249,10 @@ module ClickSend
 
       if attributes.key?(:'schedule')
         self.schedule = attributes[:'schedule']
+      end
+
+      if attributes.key?(:'date_added')
+        self.date_added = attributes[:'date_added']
       end
 
       if attributes.key?(:'status_code')
@@ -314,9 +352,13 @@ module ClickSend
           date == o.date &&
           to == o.to &&
           body == o.body &&
+          subject == o.subject &&
+          priority == o.priority &&
+          _media_file_url == o._media_file_url &&
           status == o.status &&
           from == o.from &&
           schedule == o.schedule &&
+          date_added == o.date_added &&
           status_code == o.status_code &&
           status_text == o.status_text &&
           error_code == o.error_code &&
@@ -346,7 +388,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [direction, date, to, body, status, from, schedule, status_code, status_text, error_code, error_text, message_id, message_parts, message_price, from_email, list_id, custom_string, contact_id, user_id, subaccount_id, country, carrier, first_name, last_name, _api_username].hash
+      [direction, date, to, body, subject, priority, _media_file_url, status, from, schedule, date_added, status_code, status_text, error_code, error_text, message_id, message_parts, message_price, from_email, list_id, custom_string, contact_id, user_id, subaccount_id, country, carrier, first_name, last_name, _api_username].hash
     end
 
     # Builds the object from hash

@@ -28,7 +28,7 @@ module ClickSend
     # The parameters related to messages.
     attr_accessor :messages
 
-    attr_accessor :currency
+    attr_accessor :_currency
 
     attr_accessor :_summary
 
@@ -42,7 +42,7 @@ module ClickSend
         :'total_count' => :'total_count',
         :'queued_count' => :'queued_count',
         :'messages' => :'messages',
-        :'currency' => :'currency',
+        :'_currency' => :'_currency',
         :'_summary' => :'_summary',
         :'blocked_count' => :'blocked_count'
       }
@@ -65,7 +65,7 @@ module ClickSend
         :'total_count' => :'Integer',
         :'queued_count' => :'Integer',
         :'messages' => :'Array<Sms>',
-        :'currency' => :'Currency',
+        :'_currency' => :'Currency',
         :'_summary' => :'CalculateSmsPriceDataSummary',
         :'blocked_count' => :'Integer'
       }
@@ -111,8 +111,8 @@ module ClickSend
         end
       end
 
-      if attributes.key?(:'currency')
-        self.currency = attributes[:'currency']
+      if attributes.key?(:'_currency')
+        self._currency = attributes[:'_currency']
       end
 
       if attributes.key?(:'_summary')
@@ -148,7 +148,7 @@ module ClickSend
           total_count == o.total_count &&
           queued_count == o.queued_count &&
           messages == o.messages &&
-          currency == o.currency &&
+          _currency == o._currency &&
           _summary == o._summary &&
           blocked_count == o.blocked_count
     end
@@ -162,7 +162,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total_price, total_count, queued_count, messages, currency, _summary, blocked_count].hash
+      [total_price, total_count, queued_count, messages, _currency, _summary, blocked_count].hash
     end
 
     # Builds the object from hash

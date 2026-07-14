@@ -15,23 +15,43 @@ require 'time'
 
 module ClickSend
   class ViewAllMmsCampaigns < ApiModelBase
-    # The HTTP status code of the response.
-    attr_accessor :http_code
+    # The total number of items available for viewing.
+    attr_accessor :total
 
-    # The response code indicating the status of the operation.
-    attr_accessor :response_code
+    # The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
+    attr_accessor :per_page
 
-    # A message describing the outcome of the operation.
-    attr_accessor :response_msg
+    # The current page number.
+    attr_accessor :current_page
+
+    # The last page number.
+    attr_accessor :last_page
+
+    # A URL of the next page. It will return **null** if there’s no next page.
+    attr_accessor :next_page_url
+
+    # A URL of the previous page. It will return **null** if there’s no previous page.
+    attr_accessor :prev_page_url
+
+    # The number of the first result in the current page.
+    attr_accessor :from
+
+    # The number of the last result in the current page.
+    attr_accessor :to
 
     attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'http_code' => :'http_code',
-        :'response_code' => :'response_code',
-        :'response_msg' => :'response_msg',
+        :'total' => :'total',
+        :'per_page' => :'per_page',
+        :'current_page' => :'current_page',
+        :'last_page' => :'last_page',
+        :'next_page_url' => :'next_page_url',
+        :'prev_page_url' => :'prev_page_url',
+        :'from' => :'from',
+        :'to' => :'to',
         :'data' => :'data'
       }
     end
@@ -49,17 +69,31 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'http_code' => :'Integer',
-        :'response_code' => :'String',
-        :'response_msg' => :'String',
-        :'data' => :'ViewAllMmsCampaignsData'
+        :'total' => :'Integer',
+        :'per_page' => :'Integer',
+        :'current_page' => :'Integer',
+        :'last_page' => :'Integer',
+        :'next_page_url' => :'String',
+        :'prev_page_url' => :'String',
+        :'from' => :'Integer',
+        :'to' => :'Integer',
+        :'data' => :'Array<MmsCampaign>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'next_page_url',
+        :'prev_page_url',
       ])
+    end
+
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'Pagination'
+      ]
     end
 
     # Initializes the object
@@ -78,20 +112,42 @@ module ClickSend
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'http_code')
-        self.http_code = attributes[:'http_code']
+      if attributes.key?(:'total')
+        self.total = attributes[:'total']
       end
 
-      if attributes.key?(:'response_code')
-        self.response_code = attributes[:'response_code']
+      if attributes.key?(:'per_page')
+        self.per_page = attributes[:'per_page']
       end
 
-      if attributes.key?(:'response_msg')
-        self.response_msg = attributes[:'response_msg']
+      if attributes.key?(:'current_page')
+        self.current_page = attributes[:'current_page']
+      end
+
+      if attributes.key?(:'last_page')
+        self.last_page = attributes[:'last_page']
+      end
+
+      if attributes.key?(:'next_page_url')
+        self.next_page_url = attributes[:'next_page_url']
+      end
+
+      if attributes.key?(:'prev_page_url')
+        self.prev_page_url = attributes[:'prev_page_url']
+      end
+
+      if attributes.key?(:'from')
+        self.from = attributes[:'from']
+      end
+
+      if attributes.key?(:'to')
+        self.to = attributes[:'to']
       end
 
       if attributes.key?(:'data')
-        self.data = attributes[:'data']
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
+        end
       end
     end
 
@@ -115,9 +171,14 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          http_code == o.http_code &&
-          response_code == o.response_code &&
-          response_msg == o.response_msg &&
+          total == o.total &&
+          per_page == o.per_page &&
+          current_page == o.current_page &&
+          last_page == o.last_page &&
+          next_page_url == o.next_page_url &&
+          prev_page_url == o.prev_page_url &&
+          from == o.from &&
+          to == o.to &&
           data == o.data
     end
 
@@ -130,7 +191,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [http_code, response_code, response_msg, data].hash
+      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data].hash
     end
 
     # Builds the object from hash

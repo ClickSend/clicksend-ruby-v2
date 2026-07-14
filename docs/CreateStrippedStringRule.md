@@ -7,7 +7,7 @@
 | **http_code** | **Integer** | The HTTP status code of the response. | [optional] |
 | **response_code** | **String** | The response code indicating the status of the operation. | [optional] |
 | **response_msg** | **String** | A message describing the outcome of the operation. | [optional] |
-| **data** | [**ViewStrippedStringRulesDataDataInner**](ViewStrippedStringRulesDataDataInner.md) |  | [optional] |
+| **data** | [**ViewStrippedStringRulesDataAllOfDataInner**](ViewStrippedStringRulesDataAllOfDataInner.md) |  | [optional] |
 
 ## Example
 

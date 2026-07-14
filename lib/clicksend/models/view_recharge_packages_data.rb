@@ -17,13 +17,13 @@ module ClickSend
   class ViewRechargePackagesData < ApiModelBase
     attr_accessor :packages
 
-    attr_accessor :_currency
+    attr_accessor :currency
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'packages' => :'packages',
-        :'_currency' => :'_currency'
+        :'currency' => :'currency'
       }
     end
 
@@ -41,7 +41,7 @@ module ClickSend
     def self.openapi_types
       {
         :'packages' => :'Array<ViewRechargePackagesDataPackagesInner>',
-        :'_currency' => :'Currency'
+        :'currency' => :'Currency'
       }
     end
 
@@ -73,8 +73,8 @@ module ClickSend
         end
       end
 
-      if attributes.key?(:'_currency')
-        self._currency = attributes[:'_currency']
+      if attributes.key?(:'currency')
+        self.currency = attributes[:'currency']
       end
     end
 
@@ -99,7 +99,7 @@ module ClickSend
       return true if self.equal?(o)
       self.class == o.class &&
           packages == o.packages &&
-          _currency == o._currency
+          currency == o.currency
     end
 
     # @see the `==` method
@@ -111,7 +111,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [packages, _currency].hash
+      [packages, currency].hash
     end
 
     # Builds the object from hash

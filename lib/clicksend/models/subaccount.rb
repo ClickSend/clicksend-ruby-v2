@@ -36,6 +36,9 @@ module ClickSend
     # The API key of the subaccount.
     attr_accessor :api_key
 
+    # Flag indicating if the subaccount has access to SMPP.
+    attr_accessor :access_smpp
+
     # Flag indicating if the subaccount has access to users.
     attr_accessor :access_users
 
@@ -69,14 +72,26 @@ module ClickSend
     # Flag indicating if the subaccount has access to reseller services.
     attr_accessor :access_reseller
 
+    # Flag indicating if the subaccount has access to global sending.
+    attr_accessor :access_global_sending
+
     # Flag indicating if the subaccount has access to MMS services.
     attr_accessor :access_mms
+
+    # Flag indicating if pricing is hidden for the subaccount.
+    attr_accessor :hide_pricing
 
     # Flag indicating if the subaccount can share campaigns.
     attr_accessor :share_campaigns
 
     # Additional notes for the subaccount.
     attr_accessor :notes
+
+    # Flag indicating if this is the main account rather than a subaccount.
+    attr_accessor :is_main
+
+    # The sign-up type used to create the subaccount, if applicable.
+    attr_accessor :sign_up_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -88,6 +103,7 @@ module ClickSend
         :'first_name' => :'first_name',
         :'last_name' => :'last_name',
         :'api_key' => :'api_key',
+        :'access_smpp' => :'access_smpp',
         :'access_users' => :'access_users',
         :'access_billing' => :'access_billing',
         :'access_reporting' => :'access_reporting',
@@ -99,9 +115,13 @@ module ClickSend
         :'access_fax' => :'access_fax',
         :'access_post' => :'access_post',
         :'access_reseller' => :'access_reseller',
+        :'access_global_sending' => :'access_global_sending',
         :'access_mms' => :'access_mms',
+        :'hide_pricing' => :'hide_pricing',
         :'share_campaigns' => :'share_campaigns',
-        :'notes' => :'notes'
+        :'notes' => :'notes',
+        :'is_main' => :'is_main',
+        :'sign_up_type' => :'sign_up_type'
       }
     end
 
@@ -125,6 +145,7 @@ module ClickSend
         :'first_name' => :'String',
         :'last_name' => :'String',
         :'api_key' => :'String',
+        :'access_smpp' => :'Integer',
         :'access_users' => :'Integer',
         :'access_billing' => :'Integer',
         :'access_reporting' => :'Integer',
@@ -136,16 +157,21 @@ module ClickSend
         :'access_fax' => :'Integer',
         :'access_post' => :'Integer',
         :'access_reseller' => :'Integer',
+        :'access_global_sending' => :'Integer',
         :'access_mms' => :'Integer',
+        :'hide_pricing' => :'Integer',
         :'share_campaigns' => :'Integer',
-        :'notes' => :'String'
+        :'notes' => :'String',
+        :'is_main' => :'Integer',
+        :'sign_up_type' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'notes'
+        :'notes',
+        :'sign_up_type'
       ])
     end
 
@@ -193,6 +219,10 @@ module ClickSend
         self.api_key = attributes[:'api_key']
       end
 
+      if attributes.key?(:'access_smpp')
+        self.access_smpp = attributes[:'access_smpp']
+      end
+
       if attributes.key?(:'access_users')
         self.access_users = attributes[:'access_users']
       end
@@ -237,8 +267,16 @@ module ClickSend
         self.access_reseller = attributes[:'access_reseller']
       end
 
+      if attributes.key?(:'access_global_sending')
+        self.access_global_sending = attributes[:'access_global_sending']
+      end
+
       if attributes.key?(:'access_mms')
         self.access_mms = attributes[:'access_mms']
+      end
+
+      if attributes.key?(:'hide_pricing')
+        self.hide_pricing = attributes[:'hide_pricing']
       end
 
       if attributes.key?(:'share_campaigns')
@@ -247,6 +285,14 @@ module ClickSend
 
       if attributes.key?(:'notes')
         self.notes = attributes[:'notes']
+      end
+
+      if attributes.key?(:'is_main')
+        self.is_main = attributes[:'is_main']
+      end
+
+      if attributes.key?(:'sign_up_type')
+        self.sign_up_type = attributes[:'sign_up_type']
       end
     end
 
@@ -277,6 +323,7 @@ module ClickSend
           first_name == o.first_name &&
           last_name == o.last_name &&
           api_key == o.api_key &&
+          access_smpp == o.access_smpp &&
           access_users == o.access_users &&
           access_billing == o.access_billing &&
           access_reporting == o.access_reporting &&
@@ -288,9 +335,13 @@ module ClickSend
           access_fax == o.access_fax &&
           access_post == o.access_post &&
           access_reseller == o.access_reseller &&
+          access_global_sending == o.access_global_sending &&
           access_mms == o.access_mms &&
+          hide_pricing == o.hide_pricing &&
           share_campaigns == o.share_campaigns &&
-          notes == o.notes
+          notes == o.notes &&
+          is_main == o.is_main &&
+          sign_up_type == o.sign_up_type
     end
 
     # @see the `==` method
@@ -302,7 +353,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [subaccount_id, api_username, email, phone_number, first_name, last_name, api_key, access_users, access_billing, access_reporting, access_contacts, access_settings, access_sms, access_email, access_voice, access_fax, access_post, access_reseller, access_mms, share_campaigns, notes].hash
+      [subaccount_id, api_username, email, phone_number, first_name, last_name, api_key, access_smpp, access_users, access_billing, access_reporting, access_contacts, access_settings, access_sms, access_email, access_voice, access_fax, access_post, access_reseller, access_global_sending, access_mms, hide_pricing, share_campaigns, notes, is_main, sign_up_type].hash
     end
 
     # Builds the object from hash

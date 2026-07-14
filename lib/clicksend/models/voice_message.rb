@@ -15,8 +15,14 @@ require 'time'
 
 module ClickSend
   class VoiceMessage < ApiModelBase
-    # The date.
+    # The date, if applicable. May be null; see also `date_added`.
     attr_accessor :date
+
+    # The Unix timestamp when the message was added.
+    attr_accessor :date_added
+
+    # The ID of the list associated with the message, if applicable.
+    attr_accessor :list_id
 
     # The recipient's phone number.
     attr_accessor :to
@@ -36,7 +42,7 @@ module ClickSend
     # The voice of the message.
     attr_accessor :voice
 
-    # The timestamp when the message should be sent.
+    # The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set.
     attr_accessor :schedule
 
     # The ID of the message.
@@ -66,13 +72,33 @@ module ClickSend
     # The machine detection of the message.
     attr_accessor :machine_detection
 
+    # Flag indicating if an answering machine was detected.
+    attr_accessor :machine_detected
+
+    # The digits entered by the recipient, if any input was collected.
+    attr_accessor :digits
+
+    # The carrier of the recipient's phone number.
+    attr_accessor :carrier
+
+    # The status code of the message.
+    attr_accessor :status_code
+
+    # A human-readable description of the status.
+    attr_accessor :status_text
+
     # The status of the message.
     attr_accessor :status
+
+    # The API username associated with the message.
+    attr_accessor :_api_username
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'date' => :'date',
+        :'date_added' => :'date_added',
+        :'list_id' => :'list_id',
         :'to' => :'to',
         :'to_type' => :'to_type',
         :'body' => :'body',
@@ -89,7 +115,13 @@ module ClickSend
         :'country' => :'country',
         :'require_input' => :'require_input',
         :'machine_detection' => :'machine_detection',
-        :'status' => :'status'
+        :'machine_detected' => :'machine_detected',
+        :'digits' => :'digits',
+        :'carrier' => :'carrier',
+        :'status_code' => :'status_code',
+        :'status_text' => :'status_text',
+        :'status' => :'status',
+        :'_api_username' => :'_api_username'
       }
     end
 
@@ -106,16 +138,18 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'date' => :'Float',
+        :'date' => :'String',
+        :'date_added' => :'Integer',
+        :'list_id' => :'String',
         :'to' => :'String',
         :'to_type' => :'String',
         :'body' => :'String',
         :'from' => :'String',
         :'lang' => :'String',
         :'voice' => :'String',
-        :'schedule' => :'Integer',
+        :'schedule' => :'String',
         :'message_id' => :'String',
-        :'message_parts' => :'Integer',
+        :'message_parts' => :'String',
         :'message_price' => :'String',
         :'custom_string' => :'String',
         :'user_id' => :'Float',
@@ -123,14 +157,27 @@ module ClickSend
         :'country' => :'String',
         :'require_input' => :'Float',
         :'machine_detection' => :'Float',
-        :'status' => :'String'
+        :'machine_detected' => :'Float',
+        :'digits' => :'String',
+        :'carrier' => :'String',
+        :'status_code' => :'String',
+        :'status_text' => :'String',
+        :'status' => :'String',
+        :'_api_username' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'date',
+        :'list_id',
         :'from',
+        :'machine_detected',
+        :'digits',
+        :'carrier',
+        :'status_code',
+        :'status_text',
       ])
     end
 
@@ -152,6 +199,14 @@ module ClickSend
 
       if attributes.key?(:'date')
         self.date = attributes[:'date']
+      end
+
+      if attributes.key?(:'date_added')
+        self.date_added = attributes[:'date_added']
+      end
+
+      if attributes.key?(:'list_id')
+        self.list_id = attributes[:'list_id']
       end
 
       if attributes.key?(:'to')
@@ -218,8 +273,32 @@ module ClickSend
         self.machine_detection = attributes[:'machine_detection']
       end
 
+      if attributes.key?(:'machine_detected')
+        self.machine_detected = attributes[:'machine_detected']
+      end
+
+      if attributes.key?(:'digits')
+        self.digits = attributes[:'digits']
+      end
+
+      if attributes.key?(:'carrier')
+        self.carrier = attributes[:'carrier']
+      end
+
+      if attributes.key?(:'status_code')
+        self.status_code = attributes[:'status_code']
+      end
+
+      if attributes.key?(:'status_text')
+        self.status_text = attributes[:'status_text']
+      end
+
       if attributes.key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'_api_username')
+        self._api_username = attributes[:'_api_username']
       end
     end
 
@@ -244,6 +323,8 @@ module ClickSend
       return true if self.equal?(o)
       self.class == o.class &&
           date == o.date &&
+          date_added == o.date_added &&
+          list_id == o.list_id &&
           to == o.to &&
           to_type == o.to_type &&
           body == o.body &&
@@ -260,7 +341,13 @@ module ClickSend
           country == o.country &&
           require_input == o.require_input &&
           machine_detection == o.machine_detection &&
-          status == o.status
+          machine_detected == o.machine_detected &&
+          digits == o.digits &&
+          carrier == o.carrier &&
+          status_code == o.status_code &&
+          status_text == o.status_text &&
+          status == o.status &&
+          _api_username == o._api_username
     end
 
     # @see the `==` method
@@ -272,7 +359,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [date, to, to_type, body, from, lang, voice, schedule, message_id, message_parts, message_price, custom_string, user_id, subaccount_id, country, require_input, machine_detection, status].hash
+      [date, date_added, list_id, to, to_type, body, from, lang, voice, schedule, message_id, message_parts, message_price, custom_string, user_id, subaccount_id, country, require_input, machine_detection, machine_detected, digits, carrier, status_code, status_text, status, _api_username].hash
     end
 
     # Builds the object from hash

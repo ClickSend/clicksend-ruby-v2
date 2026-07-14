@@ -14,18 +14,22 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewStrippedStringRulesDataDataInner < ApiModelBase
-    # The ID of the rule.
-    attr_accessor :rule_id
+  class AddAllowedEmailData < ApiModelBase
+    # The ID of the email address.
+    attr_accessor :email_address_id
 
-    # The string to be stripped.
-    attr_accessor :strip_string
+    # The email address.
+    attr_accessor :email_address
+
+    # The sender.
+    attr_accessor :from
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'rule_id' => :'rule_id',
-        :'strip_string' => :'strip_string'
+        :'email_address_id' => :'email_address_id',
+        :'email_address' => :'email_address',
+        :'from' => :'from'
       }
     end
 
@@ -42,8 +46,9 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'rule_id' => :'Integer',
-        :'strip_string' => :'String'
+        :'email_address_id' => :'Float',
+        :'email_address' => :'String',
+        :'from' => :'String'
       }
     end
 
@@ -57,24 +62,28 @@ module ClickSend
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewStrippedStringRulesDataDataInner` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::AddAllowedEmailData` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewStrippedStringRulesDataDataInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::AddAllowedEmailData`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'rule_id')
-        self.rule_id = attributes[:'rule_id']
+      if attributes.key?(:'email_address_id')
+        self.email_address_id = attributes[:'email_address_id']
       end
 
-      if attributes.key?(:'strip_string')
-        self.strip_string = attributes[:'strip_string']
+      if attributes.key?(:'email_address')
+        self.email_address = attributes[:'email_address']
+      end
+
+      if attributes.key?(:'from')
+        self.from = attributes[:'from']
       end
     end
 
@@ -98,8 +107,9 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          rule_id == o.rule_id &&
-          strip_string == o.strip_string
+          email_address_id == o.email_address_id &&
+          email_address == o.email_address &&
+          from == o.from
     end
 
     # @see the `==` method
@@ -111,7 +121,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [rule_id, strip_string].hash
+      [email_address_id, email_address, from].hash
     end
 
     # Builds the object from hash

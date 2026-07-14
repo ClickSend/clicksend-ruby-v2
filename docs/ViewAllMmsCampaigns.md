@@ -4,10 +4,15 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **http_code** | **Integer** | The HTTP status code of the response. | [optional] |
-| **response_code** | **String** | The response code indicating the status of the operation. | [optional] |
-| **response_msg** | **String** | A message describing the outcome of the operation. | [optional] |
-| **data** | [**ViewAllMmsCampaignsData**](ViewAllMmsCampaignsData.md) |  | [optional] |
+| **total** | **Integer** | The total number of items available for viewing. | [optional] |
+| **per_page** | **Integer** | The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum. | [optional] |
+| **current_page** | **Integer** | The current page number. | [optional] |
+| **last_page** | **Integer** | The last page number. | [optional] |
+| **next_page_url** | **String** | A URL of the next page. It will return **null** if there’s no next page. | [optional] |
+| **prev_page_url** | **String** | A URL of the previous page. It will return **null** if there’s no previous page. | [optional] |
+| **from** | **Integer** | The number of the first result in the current page. | [optional] |
+| **to** | **Integer** | The number of the last result in the current page. | [optional] |
+| **data** | [**Array&lt;MmsCampaign&gt;**](MmsCampaign.md) |  | [optional] |
 
 ## Example
 
@@ -15,9 +20,14 @@
 require 'clicksend'
 
 instance = ClickSend::ViewAllMmsCampaigns.new(
-  http_code: 200,
-  response_code: SUCCESS,
-  response_msg: Countries have been selected.,
+  total: 2,
+  per_page: 15,
+  current_page: 1,
+  last_page: 1,
+  next_page_url: null,
+  prev_page_url: null,
+  from: 1,
+  to: 2,
   data: null
 )
 ```

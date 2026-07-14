@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewAllowedEmailsDataInner < ApiModelBase
+  class ViewAllowedEmailsDataAllOfDataInner < ApiModelBase
     # The ID of the email address.
     attr_accessor :email_address_id
 
@@ -24,12 +24,32 @@ module ClickSend
     # The sender.
     attr_accessor :from
 
+    # The ID of the subaccount that owns this email address.
+    attr_accessor :subaccount_id
+
+    # The fax number used as the sender, if applicable.
+    attr_accessor :from_fax
+
+    # The voice used when this email address triggers a voice message.
+    attr_accessor :voice
+
+    # The language used when this email address triggers a voice message.
+    attr_accessor :lang
+
+    # The name of the subaccount that owns this email address.
+    attr_accessor :_subaccount_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'email_address_id' => :'email_address_id',
         :'email_address' => :'email_address',
-        :'from' => :'from'
+        :'from' => :'from',
+        :'subaccount_id' => :'subaccount_id',
+        :'from_fax' => :'from_fax',
+        :'voice' => :'voice',
+        :'lang' => :'lang',
+        :'_subaccount_name' => :'_subaccount_name'
       }
     end
 
@@ -48,13 +68,19 @@ module ClickSend
       {
         :'email_address_id' => :'Float',
         :'email_address' => :'String',
-        :'from' => :'String'
+        :'from' => :'String',
+        :'subaccount_id' => :'Integer',
+        :'from_fax' => :'String',
+        :'voice' => :'String',
+        :'lang' => :'String',
+        :'_subaccount_name' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'from_fax',
       ])
     end
 
@@ -62,14 +88,14 @@ module ClickSend
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAllowedEmailsDataInner` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAllowedEmailsDataAllOfDataInner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAllowedEmailsDataInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAllowedEmailsDataAllOfDataInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -84,6 +110,26 @@ module ClickSend
 
       if attributes.key?(:'from')
         self.from = attributes[:'from']
+      end
+
+      if attributes.key?(:'subaccount_id')
+        self.subaccount_id = attributes[:'subaccount_id']
+      end
+
+      if attributes.key?(:'from_fax')
+        self.from_fax = attributes[:'from_fax']
+      end
+
+      if attributes.key?(:'voice')
+        self.voice = attributes[:'voice']
+      end
+
+      if attributes.key?(:'lang')
+        self.lang = attributes[:'lang']
+      end
+
+      if attributes.key?(:'_subaccount_name')
+        self._subaccount_name = attributes[:'_subaccount_name']
       end
     end
 
@@ -109,7 +155,12 @@ module ClickSend
       self.class == o.class &&
           email_address_id == o.email_address_id &&
           email_address == o.email_address &&
-          from == o.from
+          from == o.from &&
+          subaccount_id == o.subaccount_id &&
+          from_fax == o.from_fax &&
+          voice == o.voice &&
+          lang == o.lang &&
+          _subaccount_name == o._subaccount_name
     end
 
     # @see the `==` method
@@ -121,7 +172,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [email_address_id, email_address, from].hash
+      [email_address_id, email_address, from, subaccount_id, from_fax, voice, lang, _subaccount_name].hash
     end
 
     # Builds the object from hash

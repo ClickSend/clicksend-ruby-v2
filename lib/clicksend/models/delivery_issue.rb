@@ -61,7 +61,7 @@ module ClickSend
         :'status' => :'status',
         :'date_added' => :'date_added',
         :'resolved' => :'resolved',
-        :'email_address' => :'email-address'
+        :'email_address' => :'email_address'
       }
     end
 

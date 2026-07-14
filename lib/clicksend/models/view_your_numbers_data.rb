@@ -41,6 +41,8 @@ module ClickSend
 
     attr_accessor :data
 
+    attr_accessor :_currency
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -52,7 +54,8 @@ module ClickSend
         :'prev_page_url' => :'prev_page_url',
         :'from' => :'from',
         :'to' => :'to',
-        :'data' => :'data'
+        :'data' => :'data',
+        :'_currency' => :'_currency'
       }
     end
 
@@ -77,7 +80,8 @@ module ClickSend
         :'prev_page_url' => :'String',
         :'from' => :'Integer',
         :'to' => :'Integer',
-        :'data' => :'Array<ViewYourNumbersDataAllOfDataInner>'
+        :'data' => :'Array<ViewYourNumbersDataAllOfDataInner>',
+        :'_currency' => :'Currency'
       }
     end
 
@@ -149,6 +153,10 @@ module ClickSend
           self.data = value
         end
       end
+
+      if attributes.key?(:'_currency')
+        self._currency = attributes[:'_currency']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -179,7 +187,8 @@ module ClickSend
           prev_page_url == o.prev_page_url &&
           from == o.from &&
           to == o.to &&
-          data == o.data
+          data == o.data &&
+          _currency == o._currency
     end
 
     # @see the `==` method
@@ -191,7 +200,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data].hash
+      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data, _currency].hash
     end
 
     # Builds the object from hash

@@ -30,6 +30,9 @@ module ClickSend
     # The quantity of the SMS.
     attr_accessor :sms_quantity
 
+    # The carrier fee applied to SMS in this package.
+    attr_accessor :price_sms_carrier_fee
+
     # The price of the voice mobile.
     attr_accessor :voice_mobile_price
 
@@ -41,6 +44,15 @@ module ClickSend
 
     # The quantity of the voice landline.
     attr_accessor :voice_landline_quantity
+
+    # The price of the MMS.
+    attr_accessor :mms_price
+
+    # The quantity of the MMS.
+    attr_accessor :mms_quantity
+
+    # The carrier fee applied to MMS in this package.
+    attr_accessor :price_mms_carrier_fee
 
     # The price of the fax.
     attr_accessor :fax_price
@@ -98,10 +110,14 @@ module ClickSend
         :'price_rate' => :'price_rate',
         :'sms_price' => :'sms_price',
         :'sms_quantity' => :'sms_quantity',
+        :'price_sms_carrier_fee' => :'price_sms_carrier_fee',
         :'voice_mobile_price' => :'voice_mobile_price',
         :'voice_mobile_quantity' => :'voice_mobile_quantity',
         :'voice_landline_price' => :'voice_landline_price',
         :'voice_landline_quantity' => :'voice_landline_quantity',
+        :'mms_price' => :'mms_price',
+        :'mms_quantity' => :'mms_quantity',
+        :'price_mms_carrier_fee' => :'price_mms_carrier_fee',
         :'fax_price' => :'fax_price',
         :'fax_quantity' => :'fax_quantity',
         :'email_price' => :'email_price',
@@ -139,10 +155,14 @@ module ClickSend
         :'price_rate' => :'Integer',
         :'sms_price' => :'Float',
         :'sms_quantity' => :'Float',
+        :'price_sms_carrier_fee' => :'String',
         :'voice_mobile_price' => :'Float',
         :'voice_mobile_quantity' => :'Float',
         :'voice_landline_price' => :'Float',
         :'voice_landline_quantity' => :'Float',
+        :'mms_price' => :'Float',
+        :'mms_quantity' => :'Float',
+        :'price_mms_carrier_fee' => :'String',
         :'fax_price' => :'Float',
         :'fax_quantity' => :'Float',
         :'email_price' => :'Float',
@@ -165,6 +185,8 @@ module ClickSend
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'price_sms_carrier_fee',
+        :'price_mms_carrier_fee',
       ])
     end
 
@@ -204,6 +226,10 @@ module ClickSend
         self.sms_quantity = attributes[:'sms_quantity']
       end
 
+      if attributes.key?(:'price_sms_carrier_fee')
+        self.price_sms_carrier_fee = attributes[:'price_sms_carrier_fee']
+      end
+
       if attributes.key?(:'voice_mobile_price')
         self.voice_mobile_price = attributes[:'voice_mobile_price']
       end
@@ -218,6 +244,18 @@ module ClickSend
 
       if attributes.key?(:'voice_landline_quantity')
         self.voice_landline_quantity = attributes[:'voice_landline_quantity']
+      end
+
+      if attributes.key?(:'mms_price')
+        self.mms_price = attributes[:'mms_price']
+      end
+
+      if attributes.key?(:'mms_quantity')
+        self.mms_quantity = attributes[:'mms_quantity']
+      end
+
+      if attributes.key?(:'price_mms_carrier_fee')
+        self.price_mms_carrier_fee = attributes[:'price_mms_carrier_fee']
       end
 
       if attributes.key?(:'fax_price')
@@ -310,10 +348,14 @@ module ClickSend
           price_rate == o.price_rate &&
           sms_price == o.sms_price &&
           sms_quantity == o.sms_quantity &&
+          price_sms_carrier_fee == o.price_sms_carrier_fee &&
           voice_mobile_price == o.voice_mobile_price &&
           voice_mobile_quantity == o.voice_mobile_quantity &&
           voice_landline_price == o.voice_landline_price &&
           voice_landline_quantity == o.voice_landline_quantity &&
+          mms_price == o.mms_price &&
+          mms_quantity == o.mms_quantity &&
+          price_mms_carrier_fee == o.price_mms_carrier_fee &&
           fax_price == o.fax_price &&
           fax_quantity == o.fax_quantity &&
           email_price == o.email_price &&
@@ -341,7 +383,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [package_id, package_price, price_rate, sms_price, sms_quantity, voice_mobile_price, voice_mobile_quantity, voice_landline_price, voice_landline_quantity, fax_price, fax_quantity, email_price, email_quantity, post_letter_black_price, post_letter_colour_price, post_page_black_price, post_page_colour_price, post_letter_black_quantity, post_letter_colour_quantity, post_direct_mail_dl_price, post_direct_mail_a5_price, post_direct_mail_min_quantity, postcard_price, postcard_quantity, automation_price].hash
+      [package_id, package_price, price_rate, sms_price, sms_quantity, price_sms_carrier_fee, voice_mobile_price, voice_mobile_quantity, voice_landline_price, voice_landline_quantity, mms_price, mms_quantity, price_mms_carrier_fee, fax_price, fax_quantity, email_price, email_quantity, post_letter_black_price, post_letter_colour_price, post_page_black_price, post_page_colour_price, post_letter_black_quantity, post_letter_colour_quantity, post_direct_mail_dl_price, post_direct_mail_a5_price, post_direct_mail_min_quantity, postcard_price, postcard_quantity, automation_price].hash
     end
 
     # Builds the object from hash

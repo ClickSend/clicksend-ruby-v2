@@ -9,14 +9,14 @@
 | **code** | **String** | The country code. | [optional] |
 | **region** | **String** | The region of the country. | [optional] |
 | **agreed_at** | **String** | The date when the country was agreed upon. | [optional] |
-| **registration_entity** | **String** | The entity responsible for the registration. | [optional] |
+| **registration_entity** | [**AccountReferrerChosen**](AccountReferrerChosen.md) |  | [optional] |
 | **registration_status** | [**GlobalSendingRegistrationStatus**](GlobalSendingRegistrationStatus.md) |  | [optional] |
 | **jotform_id** | **String** | The ID of the country in JotForm. | [optional] |
 | **sms_registration_type** | **Integer** | The type of SMS registration. | [optional] |
-| **block_registration** | **Integer** | Indicates if registration is blocked. | [optional] |
-| **block_leads** | **Integer** | Indicates if leads are blocked. | [optional] |
+| **block_registration** | **Boolean** | Indicates if registration is blocked. | [optional] |
+| **block_leads** | **Boolean** | Indicates if leads are blocked. | [optional] |
 | **trial_from_address** | **String** | The trial from address. | [optional] |
-| **restricted_sending** | **Integer** | Indicates if sending is restricted. | [optional] |
+| **restricted_sending** | **Boolean** | Indicates if sending is restricted. | [optional] |
 | **trial_sending** | **Integer** | Indicates if trial sending is allowed. | [optional] |
 | **trial_sending_description** | **String** | Description of trial sending. | [optional] |
 | **has_regulation_requirements** | **Integer** | Indicates if there are regulation requirements. | [optional] |
@@ -38,10 +38,10 @@ instance = ClickSend::GlobalSending.new(
   registration_status: null,
   jotform_id: 12345,
   sms_registration_type: 0,
-  block_registration: 0,
-  block_leads: 0,
+  block_registration: false,
+  block_leads: false,
   trial_from_address: ,
-  restricted_sending: 0,
+  restricted_sending: false,
   trial_sending: 0,
   trial_sending_description: ,
   has_regulation_requirements: 0,

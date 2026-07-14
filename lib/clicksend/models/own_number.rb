@@ -42,6 +42,9 @@ module ClickSend
     # The timestamp when the phone number was verified.
     attr_accessor :verified_timestamp
 
+    # The timestamp when the user was last notified about this number, if applicable.
+    attr_accessor :notified_timestamp
+
     # Indicates whether the phone number verification is nearing its expiration date: - **true:** The verification was completed more than 11 months ago and will expire soon. You should re-verify your phone number to maintain uninterrupted service. - **false:** The verification is still valid and not approaching expiration.
     attr_accessor :is_nearing_expiration
 
@@ -63,6 +66,7 @@ module ClickSend
         :'label' => :'label',
         :'status' => :'status',
         :'verified_timestamp' => :'verified_timestamp',
+        :'notified_timestamp' => :'notified_timestamp',
         :'is_nearing_expiration' => :'is_nearing_expiration',
         :'created_timestamp' => :'created_timestamp',
         :'updated_timestamp' => :'updated_timestamp'
@@ -91,6 +95,7 @@ module ClickSend
         :'label' => :'String',
         :'status' => :'String',
         :'verified_timestamp' => :'Time',
+        :'notified_timestamp' => :'String',
         :'is_nearing_expiration' => :'Boolean',
         :'created_timestamp' => :'Time',
         :'updated_timestamp' => :'Time'
@@ -100,6 +105,7 @@ module ClickSend
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'notified_timestamp',
       ])
     end
 
@@ -155,6 +161,10 @@ module ClickSend
         self.verified_timestamp = attributes[:'verified_timestamp']
       end
 
+      if attributes.key?(:'notified_timestamp')
+        self.notified_timestamp = attributes[:'notified_timestamp']
+      end
+
       if attributes.key?(:'is_nearing_expiration')
         self.is_nearing_expiration = attributes[:'is_nearing_expiration']
       end
@@ -197,6 +207,7 @@ module ClickSend
           label == o.label &&
           status == o.status &&
           verified_timestamp == o.verified_timestamp &&
+          notified_timestamp == o.notified_timestamp &&
           is_nearing_expiration == o.is_nearing_expiration &&
           created_timestamp == o.created_timestamp &&
           updated_timestamp == o.updated_timestamp
@@ -211,7 +222,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, account_id, workspace_id, user_id, phone_number, country, label, status, verified_timestamp, is_nearing_expiration, created_timestamp, updated_timestamp].hash
+      [id, account_id, workspace_id, user_id, phone_number, country, label, status, verified_timestamp, notified_timestamp, is_nearing_expiration, created_timestamp, updated_timestamp].hash
     end
 
     # Builds the object from hash

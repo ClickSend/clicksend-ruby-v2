@@ -28,13 +28,21 @@ module ClickSend
     # The full name of the currency.
     attr_accessor :currency_name_long
 
+    # The minimum amount that can be used to recharge the account, in this currency.
+    attr_accessor :min_recharge_amount
+
+    # The maximum amount that can be used to recharge the account, in this currency.
+    attr_accessor :max_recharge_amount
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'currency_name_short' => :'currency_name_short',
         :'currency_prefix_d' => :'currency_prefix_d',
         :'currency_prefix_c' => :'currency_prefix_c',
-        :'currency_name_long' => :'currency_name_long'
+        :'currency_name_long' => :'currency_name_long',
+        :'min_recharge_amount' => :'min_recharge_amount',
+        :'max_recharge_amount' => :'max_recharge_amount'
       }
     end
 
@@ -54,7 +62,9 @@ module ClickSend
         :'currency_name_short' => :'String',
         :'currency_prefix_d' => :'String',
         :'currency_prefix_c' => :'String',
-        :'currency_name_long' => :'String'
+        :'currency_name_long' => :'String',
+        :'min_recharge_amount' => :'String',
+        :'max_recharge_amount' => :'String'
       }
     end
 
@@ -95,6 +105,14 @@ module ClickSend
       if attributes.key?(:'currency_name_long')
         self.currency_name_long = attributes[:'currency_name_long']
       end
+
+      if attributes.key?(:'min_recharge_amount')
+        self.min_recharge_amount = attributes[:'min_recharge_amount']
+      end
+
+      if attributes.key?(:'max_recharge_amount')
+        self.max_recharge_amount = attributes[:'max_recharge_amount']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,7 +138,9 @@ module ClickSend
           currency_name_short == o.currency_name_short &&
           currency_prefix_d == o.currency_prefix_d &&
           currency_prefix_c == o.currency_prefix_c &&
-          currency_name_long == o.currency_name_long
+          currency_name_long == o.currency_name_long &&
+          min_recharge_amount == o.min_recharge_amount &&
+          max_recharge_amount == o.max_recharge_amount
     end
 
     # @see the `==` method
@@ -132,7 +152,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [currency_name_short, currency_prefix_d, currency_prefix_c, currency_name_long].hash
+      [currency_name_short, currency_prefix_d, currency_prefix_c, currency_name_long, min_recharge_amount, max_recharge_amount].hash
     end
 
     # Builds the object from hash

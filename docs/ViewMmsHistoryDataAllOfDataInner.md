@@ -8,9 +8,13 @@
 | **date** | **String** | The date of the message. | [optional] |
 | **to** | **String** | The recipient of the message. | [optional] |
 | **body** | **String** | The body of the message. | [optional] |
+| **subject** | **String** | The subject of the message. | [optional] |
+| **priority** | **Integer** | The priority of the message. | [optional] |
+| **_media_file_url** | **String** | A temporary, signed URL to download the message&#39;s media attachment. | [optional] |
 | **status** | **String** | The status of the message. | [optional] |
 | **from** | **String** | The sender of the message. | [optional] |
 | **schedule** | **String** | The schedule time of the message. | [optional] |
+| **date_added** | **Integer** | The Unix timestamp when the message was added. | [optional] |
 | **status_code** | **String** | The status code (if applicable). | [optional] |
 | **status_text** | **String** | The status text (if applicable). | [optional] |
 | **error_code** | **String** | The error code (if applicable). | [optional] |
@@ -40,9 +44,13 @@ instance = ClickSend::ViewMmsHistoryDataAllOfDataInner.new(
   date: 1436932432,
   to: +16783270696,
   body: Chocolate bar icing icing oat cake carrot cake jelly cotton 1iQByXxdLN.,
+  subject: This is a subject,
+  priority: 2,
+  _media_file_url: https://clicksend-api-downloads.s3.ap-southeast-2.amazonaws.com/_private/example.jpg,
   status: Completed,
   from: sendlist,
   schedule: 1436879372,
+  date_added: 1436879372,
   status_code: null,
   status_text: null,
   error_code: null,

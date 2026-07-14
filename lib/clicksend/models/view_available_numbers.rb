@@ -26,16 +26,13 @@ module ClickSend
 
     attr_accessor :data
 
-    attr_accessor :_currency
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'http_code' => :'http_code',
         :'response_code' => :'response_code',
         :'response_msg' => :'response_msg',
-        :'data' => :'data',
-        :'_currency' => :'_currency'
+        :'data' => :'data'
       }
     end
 
@@ -55,8 +52,7 @@ module ClickSend
         :'http_code' => :'Integer',
         :'response_code' => :'String',
         :'response_msg' => :'String',
-        :'data' => :'ViewAvailableNumbersData',
-        :'_currency' => :'Currency'
+        :'data' => :'ViewAvailableNumbersData'
       }
     end
 
@@ -97,10 +93,6 @@ module ClickSend
       if attributes.key?(:'data')
         self.data = attributes[:'data']
       end
-
-      if attributes.key?(:'_currency')
-        self._currency = attributes[:'_currency']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -126,8 +118,7 @@ module ClickSend
           http_code == o.http_code &&
           response_code == o.response_code &&
           response_msg == o.response_msg &&
-          data == o.data &&
-          _currency == o._currency
+          data == o.data
     end
 
     # @see the `==` method
@@ -139,7 +130,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [http_code, response_code, response_msg, data, _currency].hash
+      [http_code, response_code, response_msg, data].hash
     end
 
     # Builds the object from hash

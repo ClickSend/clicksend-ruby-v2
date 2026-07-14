@@ -9,10 +9,14 @@
 | **price_rate** | **Integer** | The pricing tier used to determine the cost per message. | [optional] |
 | **sms_price** | **Float** | The price of the SMS. | [optional] |
 | **sms_quantity** | **Float** | The quantity of the SMS. | [optional] |
+| **price_sms_carrier_fee** | **String** | The carrier fee applied to SMS in this package. | [optional] |
 | **voice_mobile_price** | **Float** | The price of the voice mobile. | [optional] |
 | **voice_mobile_quantity** | **Float** | The quantity of the voice mobile. | [optional] |
 | **voice_landline_price** | **Float** | The price of the voice landline. | [optional] |
 | **voice_landline_quantity** | **Float** | The quantity of the voice landline. | [optional] |
+| **mms_price** | **Float** | The price of the MMS. | [optional] |
+| **mms_quantity** | **Float** | The quantity of the MMS. | [optional] |
+| **price_mms_carrier_fee** | **String** | The carrier fee applied to MMS in this package. | [optional] |
 | **fax_price** | **Float** | The price of the fax. | [optional] |
 | **fax_quantity** | **Float** | The quantity of the fax. | [optional] |
 | **email_price** | **Float** | The price of the email. | [optional] |
@@ -41,10 +45,14 @@ instance = ClickSend::ViewRechargePackagesDataPackagesInner.new(
   price_rate: 0,
   sms_price: 0.099,
   sms_quantity: 202,
+  price_sms_carrier_fee: 0.0000,
   voice_mobile_price: 0.99,
   voice_mobile_quantity: 202,
   voice_landline_price: 0.0583,
   voice_landline_quantity: 343,
+  mms_price: 0.275,
+  mms_quantity: 72,
+  price_mms_carrier_fee: null,
   fax_price: 0.198,
   fax_quantity: 101,
   email_price: 0.033,

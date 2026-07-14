@@ -30,6 +30,9 @@ module ClickSend
     # Flag indicating if the user account is banned.
     attr_accessor :banned
 
+    # The Unix timestamp of when the account was created.
+    attr_accessor :date_sign_up
+
     # The balance of the user's account.
     attr_accessor :balance
 
@@ -60,8 +63,14 @@ module ClickSend
     # The billing mobile number of the account.
     attr_accessor :account_billing_mobile
 
+    # The account's priority tier.
+    attr_accessor :priority
+
     # The country of the user.
     attr_accessor :country
+
+    # The country the user is currently connecting from, based on IP address.
+    attr_accessor :country_ip
 
     # The default country for SMS.
     attr_accessor :default_country_sms
@@ -99,9 +108,32 @@ module ClickSend
     # The pricing tier used to determine the cost per message.
     attr_accessor :price_rate
 
+    # Flag indicating if uploaded media is kept private.
+    attr_accessor :private_uploads
+
+    # The quality setting used for outgoing faxes.
+    attr_accessor :fax_quality
+
+    # Flag indicating if your number is hidden on outgoing SMS.
+    attr_accessor :setting_sms_hide_your_number
+
+    # Flag indicating if the business name is hidden on outgoing SMS.
+    attr_accessor :setting_sms_hide_business_name
+
+    # The pricing variant applied to the account.
+    attr_accessor :pricing_variant
+
+    # Flag indicating if the account is currently on a trial.
+    attr_accessor :on_trial
+
+    # The date the trial expires, if the account is on a trial.
+    attr_accessor :trial_expiry
+
     attr_accessor :_currency
 
     attr_accessor :_subaccount
+
+    attr_accessor :_referrer_chosen
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -111,6 +143,7 @@ module ClickSend
         :'user_email' => :'user_email',
         :'active' => :'active',
         :'banned' => :'banned',
+        :'date_sign_up' => :'date_sign_up',
         :'balance' => :'balance',
         :'user_phone' => :'user_phone',
         :'reply_to' => :'reply_to',
@@ -121,7 +154,9 @@ module ClickSend
         :'account_name' => :'account_name',
         :'account_billing_email' => :'account_billing_email',
         :'account_billing_mobile' => :'account_billing_mobile',
+        :'priority' => :'priority',
         :'country' => :'country',
+        :'country_ip' => :'country_ip',
         :'default_country_sms' => :'default_country_sms',
         :'auto_recharge' => :'auto_recharge',
         :'auto_recharge_amount' => :'auto_recharge_amount',
@@ -134,8 +169,16 @@ module ClickSend
         :'balance_commission' => :'balance_commission',
         :'timezone' => :'timezone',
         :'price_rate' => :'price_rate',
+        :'private_uploads' => :'private_uploads',
+        :'fax_quality' => :'fax_quality',
+        :'setting_sms_hide_your_number' => :'setting_sms_hide_your_number',
+        :'setting_sms_hide_business_name' => :'setting_sms_hide_business_name',
+        :'pricing_variant' => :'pricing_variant',
+        :'on_trial' => :'on_trial',
+        :'trial_expiry' => :'trial_expiry',
         :'_currency' => :'_currency',
-        :'_subaccount' => :'_subaccount'
+        :'_subaccount' => :'_subaccount',
+        :'_referrer_chosen' => :'_referrer_chosen'
       }
     end
 
@@ -157,6 +200,7 @@ module ClickSend
         :'user_email' => :'String',
         :'active' => :'Integer',
         :'banned' => :'Integer',
+        :'date_sign_up' => :'Integer',
         :'balance' => :'String',
         :'user_phone' => :'String',
         :'reply_to' => :'String',
@@ -167,7 +211,9 @@ module ClickSend
         :'account_name' => :'String',
         :'account_billing_email' => :'String',
         :'account_billing_mobile' => :'String',
+        :'priority' => :'Integer',
         :'country' => :'String',
+        :'country_ip' => :'String',
         :'default_country_sms' => :'String',
         :'auto_recharge' => :'Integer',
         :'auto_recharge_amount' => :'String',
@@ -180,8 +226,16 @@ module ClickSend
         :'balance_commission' => :'String',
         :'timezone' => :'String',
         :'price_rate' => :'Integer',
+        :'private_uploads' => :'Integer',
+        :'fax_quality' => :'Integer',
+        :'setting_sms_hide_your_number' => :'Integer',
+        :'setting_sms_hide_business_name' => :'Integer',
+        :'pricing_variant' => :'Integer',
+        :'on_trial' => :'Integer',
+        :'trial_expiry' => :'String',
         :'_currency' => :'Currency',
-        :'_subaccount' => :'Subaccount'
+        :'_subaccount' => :'Subaccount',
+        :'_referrer_chosen' => :'AccountReferrerChosen'
       }
     end
 
@@ -189,6 +243,8 @@ module ClickSend
     def self.openapi_nullable
       Set.new([
         :'delivery_to',
+        :'trial_expiry',
+        :'_referrer_chosen'
       ])
     end
 
@@ -226,6 +282,10 @@ module ClickSend
 
       if attributes.key?(:'banned')
         self.banned = attributes[:'banned']
+      end
+
+      if attributes.key?(:'date_sign_up')
+        self.date_sign_up = attributes[:'date_sign_up']
       end
 
       if attributes.key?(:'balance')
@@ -268,8 +328,16 @@ module ClickSend
         self.account_billing_mobile = attributes[:'account_billing_mobile']
       end
 
+      if attributes.key?(:'priority')
+        self.priority = attributes[:'priority']
+      end
+
       if attributes.key?(:'country')
         self.country = attributes[:'country']
+      end
+
+      if attributes.key?(:'country_ip')
+        self.country_ip = attributes[:'country_ip']
       end
 
       if attributes.key?(:'default_country_sms')
@@ -320,12 +388,44 @@ module ClickSend
         self.price_rate = attributes[:'price_rate']
       end
 
+      if attributes.key?(:'private_uploads')
+        self.private_uploads = attributes[:'private_uploads']
+      end
+
+      if attributes.key?(:'fax_quality')
+        self.fax_quality = attributes[:'fax_quality']
+      end
+
+      if attributes.key?(:'setting_sms_hide_your_number')
+        self.setting_sms_hide_your_number = attributes[:'setting_sms_hide_your_number']
+      end
+
+      if attributes.key?(:'setting_sms_hide_business_name')
+        self.setting_sms_hide_business_name = attributes[:'setting_sms_hide_business_name']
+      end
+
+      if attributes.key?(:'pricing_variant')
+        self.pricing_variant = attributes[:'pricing_variant']
+      end
+
+      if attributes.key?(:'on_trial')
+        self.on_trial = attributes[:'on_trial']
+      end
+
+      if attributes.key?(:'trial_expiry')
+        self.trial_expiry = attributes[:'trial_expiry']
+      end
+
       if attributes.key?(:'_currency')
         self._currency = attributes[:'_currency']
       end
 
       if attributes.key?(:'_subaccount')
         self._subaccount = attributes[:'_subaccount']
+      end
+
+      if attributes.key?(:'_referrer_chosen')
+        self._referrer_chosen = attributes[:'_referrer_chosen']
       end
     end
 
@@ -354,6 +454,7 @@ module ClickSend
           user_email == o.user_email &&
           active == o.active &&
           banned == o.banned &&
+          date_sign_up == o.date_sign_up &&
           balance == o.balance &&
           user_phone == o.user_phone &&
           reply_to == o.reply_to &&
@@ -364,7 +465,9 @@ module ClickSend
           account_name == o.account_name &&
           account_billing_email == o.account_billing_email &&
           account_billing_mobile == o.account_billing_mobile &&
+          priority == o.priority &&
           country == o.country &&
+          country_ip == o.country_ip &&
           default_country_sms == o.default_country_sms &&
           auto_recharge == o.auto_recharge &&
           auto_recharge_amount == o.auto_recharge_amount &&
@@ -377,8 +480,16 @@ module ClickSend
           balance_commission == o.balance_commission &&
           timezone == o.timezone &&
           price_rate == o.price_rate &&
+          private_uploads == o.private_uploads &&
+          fax_quality == o.fax_quality &&
+          setting_sms_hide_your_number == o.setting_sms_hide_your_number &&
+          setting_sms_hide_business_name == o.setting_sms_hide_business_name &&
+          pricing_variant == o.pricing_variant &&
+          on_trial == o.on_trial &&
+          trial_expiry == o.trial_expiry &&
           _currency == o._currency &&
-          _subaccount == o._subaccount
+          _subaccount == o._subaccount &&
+          _referrer_chosen == o._referrer_chosen
     end
 
     # @see the `==` method
@@ -390,7 +501,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [user_id, username, user_email, active, banned, balance, user_phone, reply_to, delivery_to, user_first_name, user_last_name, account, account_name, account_billing_email, account_billing_mobile, country, default_country_sms, auto_recharge, auto_recharge_amount, low_credit_amount, setting_unicode_sms, setting_email_sms_subject, setting_fix_sender_id, setting_sms_message_char_limit, old_dashboard, balance_commission, timezone, price_rate, _currency, _subaccount].hash
+      [user_id, username, user_email, active, banned, date_sign_up, balance, user_phone, reply_to, delivery_to, user_first_name, user_last_name, account, account_name, account_billing_email, account_billing_mobile, priority, country, country_ip, default_country_sms, auto_recharge, auto_recharge_amount, low_credit_amount, setting_unicode_sms, setting_email_sms_subject, setting_fix_sender_id, setting_sms_message_char_limit, old_dashboard, balance_commission, timezone, price_rate, private_uploads, fax_quality, setting_sms_hide_your_number, setting_sms_hide_business_name, pricing_variant, on_trial, trial_expiry, _currency, _subaccount, _referrer_chosen].hash
     end
 
     # Builds the object from hash

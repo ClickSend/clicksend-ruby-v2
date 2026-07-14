@@ -42,10 +42,10 @@ module ClickSend
     # Custom field 4.
     attr_accessor :custom_4
 
-    # The date when the contact was added.
+    # The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
     attr_accessor :date_added
 
-    # The date when the contact was last updated.
+    # The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \"1783997542\") instead of ISO 8601.
     attr_accessor :date_updated
 
     # The fax number of the contact.
@@ -127,8 +127,8 @@ module ClickSend
         :'custom_2' => :'String',
         :'custom_3' => :'String',
         :'custom_4' => :'String',
-        :'date_added' => :'Time',
-        :'date_updated' => :'Time',
+        :'date_added' => :'String',
+        :'date_updated' => :'String',
         :'fax_number' => :'String',
         :'organization_name' => :'String',
         :'email' => :'String',

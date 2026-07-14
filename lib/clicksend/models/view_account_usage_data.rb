@@ -17,6 +17,8 @@ module ClickSend
   class ViewAccountUsageData < ApiModelBase
     attr_accessor :sms
 
+    attr_accessor :mms
+
     attr_accessor :voice
 
     attr_accessor :fax
@@ -24,6 +26,10 @@ module ClickSend
     attr_accessor :post
 
     attr_accessor :email
+
+    attr_accessor :email_transactional
+
+    attr_accessor :postcards
 
     attr_accessor :sms_total
 
@@ -35,19 +41,34 @@ module ClickSend
 
     attr_accessor :email_total
 
+    attr_accessor :mms_total
+
+    attr_accessor :email_transactional_total
+
+    attr_accessor :postcards_total
+
+    attr_accessor :_currency
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'sms' => :'sms',
+        :'mms' => :'mms',
         :'voice' => :'voice',
         :'fax' => :'fax',
         :'post' => :'post',
         :'email' => :'email',
+        :'email_transactional' => :'email_transactional',
+        :'postcards' => :'postcards',
         :'sms_total' => :'sms_total',
         :'voice_total' => :'voice_total',
         :'fax_total' => :'fax_total',
         :'post_total' => :'post_total',
-        :'email_total' => :'email_total'
+        :'email_total' => :'email_total',
+        :'mms_total' => :'mms_total',
+        :'email_transactional_total' => :'email_transactional_total',
+        :'postcards_total' => :'postcards_total',
+        :'_currency' => :'_currency'
       }
     end
 
@@ -65,15 +86,22 @@ module ClickSend
     def self.openapi_types
       {
         :'sms' => :'Array<ViewAccountUsageDataSmsInner>',
-        :'voice' => :'Array<ViewAccountUsageDataVoiceInner>',
-        :'fax' => :'Array<ViewAccountUsageDataVoiceInner>',
-        :'post' => :'Array<ViewAccountUsageDataVoiceInner>',
+        :'mms' => :'Array<ViewAccountUsageDataMmsInner>',
+        :'voice' => :'Array<ViewAccountUsageDataMmsInner>',
+        :'fax' => :'Array<ViewAccountUsageDataMmsInner>',
+        :'post' => :'Array<ViewAccountUsageDataMmsInner>',
         :'email' => :'Array<ViewAccountUsageDataEmailInner>',
+        :'email_transactional' => :'Array<ViewAccountUsageDataEmailInner>',
+        :'postcards' => :'Array<ViewAccountUsageDataMmsInner>',
         :'sms_total' => :'ViewAccountUsageDataSmsTotal',
         :'voice_total' => :'ViewAccountUsageDataSmsTotal',
         :'fax_total' => :'ViewAccountUsageDataSmsTotal',
         :'post_total' => :'ViewAccountUsageDataSmsTotal',
-        :'email_total' => :'ViewAccountUsageDataEmailTotal'
+        :'email_total' => :'ViewAccountUsageDataEmailTotal',
+        :'mms_total' => :'ViewVoiceStatisticsDataTotalOutbound',
+        :'email_transactional_total' => :'ViewVoiceStatisticsDataTotalOutbound',
+        :'postcards_total' => :'ViewVoiceStatisticsDataTotalOutbound',
+        :'_currency' => :'Currency'
       }
     end
 
@@ -105,6 +133,12 @@ module ClickSend
         end
       end
 
+      if attributes.key?(:'mms')
+        if (value = attributes[:'mms']).is_a?(Array)
+          self.mms = value
+        end
+      end
+
       if attributes.key?(:'voice')
         if (value = attributes[:'voice']).is_a?(Array)
           self.voice = value
@@ -129,6 +163,18 @@ module ClickSend
         end
       end
 
+      if attributes.key?(:'email_transactional')
+        if (value = attributes[:'email_transactional']).is_a?(Array)
+          self.email_transactional = value
+        end
+      end
+
+      if attributes.key?(:'postcards')
+        if (value = attributes[:'postcards']).is_a?(Array)
+          self.postcards = value
+        end
+      end
+
       if attributes.key?(:'sms_total')
         self.sms_total = attributes[:'sms_total']
       end
@@ -147,6 +193,22 @@ module ClickSend
 
       if attributes.key?(:'email_total')
         self.email_total = attributes[:'email_total']
+      end
+
+      if attributes.key?(:'mms_total')
+        self.mms_total = attributes[:'mms_total']
+      end
+
+      if attributes.key?(:'email_transactional_total')
+        self.email_transactional_total = attributes[:'email_transactional_total']
+      end
+
+      if attributes.key?(:'postcards_total')
+        self.postcards_total = attributes[:'postcards_total']
+      end
+
+      if attributes.key?(:'_currency')
+        self._currency = attributes[:'_currency']
       end
     end
 
@@ -171,15 +233,22 @@ module ClickSend
       return true if self.equal?(o)
       self.class == o.class &&
           sms == o.sms &&
+          mms == o.mms &&
           voice == o.voice &&
           fax == o.fax &&
           post == o.post &&
           email == o.email &&
+          email_transactional == o.email_transactional &&
+          postcards == o.postcards &&
           sms_total == o.sms_total &&
           voice_total == o.voice_total &&
           fax_total == o.fax_total &&
           post_total == o.post_total &&
-          email_total == o.email_total
+          email_total == o.email_total &&
+          mms_total == o.mms_total &&
+          email_transactional_total == o.email_transactional_total &&
+          postcards_total == o.postcards_total &&
+          _currency == o._currency
     end
 
     # @see the `==` method
@@ -191,7 +260,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [sms, voice, fax, post, email, sms_total, voice_total, fax_total, post_total, email_total].hash
+      [sms, mms, voice, fax, post, email, email_transactional, postcards, sms_total, voice_total, fax_total, post_total, email_total, mms_total, email_transactional_total, postcards_total, _currency].hash
     end
 
     # Builds the object from hash

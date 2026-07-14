@@ -1,4 +1,4 @@
-# ClickSend::ViewAllowedEmailsDataInner
+# ClickSend::AddAllowedEmailData
 
 ## Properties
 
@@ -13,10 +13,10 @@
 ```ruby
 require 'clicksend'
 
-instance = ClickSend::ViewAllowedEmailsDataInner.new(
-  email_address_id: 1,
-  email_address: my@email.com,
-  from: +13523944199
+instance = ClickSend::AddAllowedEmailData.new(
+  email_address_id: 107,
+  email_address: Cv3p0@gmail.com,
+  from: +17128845887
 )
 ```
 

@@ -13,8 +13,8 @@
 | **custom_2** | **String** | Custom field 2. | [optional] |
 | **custom_3** | **String** | Custom field 3. | [optional] |
 | **custom_4** | **String** | Custom field 4. | [optional] |
-| **date_added** | **Time** | The date when the contact was added. | [optional] |
-| **date_updated** | **Time** | The date when the contact was last updated. | [optional] |
+| **date_added** | **String** | The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \&quot;1783997542\&quot;) instead of ISO 8601. | [optional] |
+| **date_updated** | **String** | The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \&quot;1783997542\&quot;) instead of ISO 8601. | [optional] |
 | **fax_number** | **String** | The fax number of the contact. | [optional] |
 | **organization_name** | **String** | The organization name of the contact. | [optional] |
 | **email** | **String** | The email address of the contact. | [optional] |

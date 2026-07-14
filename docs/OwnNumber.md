@@ -13,6 +13,7 @@
 | **label** | **String** | A label for the phone number. | [optional] |
 | **status** | **String** | The status of the phone number. | [optional] |
 | **verified_timestamp** | **Time** | The timestamp when the phone number was verified. | [optional] |
+| **notified_timestamp** | **String** | The timestamp when the user was last notified about this number, if applicable. | [optional] |
 | **is_nearing_expiration** | **Boolean** | Indicates whether the phone number verification is nearing its expiration date: - **true:** The verification was completed more than 11 months ago and will expire soon. You should re-verify your phone number to maintain uninterrupted service. - **false:** The verification is still valid and not approaching expiration. | [optional] |
 | **created_timestamp** | **Time** | The timestamp when the record was created. | [optional] |
 | **updated_timestamp** | **Time** | The timestamp when the record was last updated. | [optional] |
@@ -32,6 +33,7 @@ instance = ClickSend::OwnNumber.new(
   label: My phone number,
   status: APPROVED,
   verified_timestamp: 2023-08-31T12:00Z,
+  notified_timestamp: null,
   is_nearing_expiration: true,
   created_timestamp: 2023-08-25T08:00Z,
   updated_timestamp: 2023-08-25T08:30Z

@@ -21,7 +21,6 @@ module ClickSend
     # The country of the language.
     attr_accessor :country
 
-    # The gender of the language.
     attr_accessor :gender
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -48,7 +47,7 @@ module ClickSend
       {
         :'code' => :'String',
         :'country' => :'String',
-        :'gender' => :'String'
+        :'gender' => :'ViewVoiceLanguagesDataInnerGender'
       }
     end
 

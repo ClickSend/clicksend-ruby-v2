@@ -27,13 +27,21 @@ module ClickSend
     # The number of contacts in the list.
     attr_accessor :_contacts_count
 
+    # Flag indicating if a contact import is currently in progress for this list.
+    attr_accessor :_import_in_progress
+
+    # Flag indicating if an opt-out removal is currently in progress for this list.
+    attr_accessor :_optout_in_progress
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'list_id' => :'list_id',
         :'list_name' => :'list_name',
         :'list_email_id' => :'list_email_id',
-        :'_contacts_count' => :'_contacts_count'
+        :'_contacts_count' => :'_contacts_count',
+        :'_import_in_progress' => :'_import_in_progress',
+        :'_optout_in_progress' => :'_optout_in_progress'
       }
     end
 
@@ -53,7 +61,9 @@ module ClickSend
         :'list_id' => :'Integer',
         :'list_name' => :'String',
         :'list_email_id' => :'String',
-        :'_contacts_count' => :'Integer'
+        :'_contacts_count' => :'Integer',
+        :'_import_in_progress' => :'Integer',
+        :'_optout_in_progress' => :'Integer'
       }
     end
 
@@ -94,6 +104,14 @@ module ClickSend
       if attributes.key?(:'_contacts_count')
         self._contacts_count = attributes[:'_contacts_count']
       end
+
+      if attributes.key?(:'_import_in_progress')
+        self._import_in_progress = attributes[:'_import_in_progress']
+      end
+
+      if attributes.key?(:'_optout_in_progress')
+        self._optout_in_progress = attributes[:'_optout_in_progress']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -119,7 +137,9 @@ module ClickSend
           list_id == o.list_id &&
           list_name == o.list_name &&
           list_email_id == o.list_email_id &&
-          _contacts_count == o._contacts_count
+          _contacts_count == o._contacts_count &&
+          _import_in_progress == o._import_in_progress &&
+          _optout_in_progress == o._optout_in_progress
     end
 
     # @see the `==` method
@@ -131,7 +151,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [list_id, list_name, list_email_id, _contacts_count].hash
+      [list_id, list_name, list_email_id, _contacts_count, _import_in_progress, _optout_in_progress].hash
     end
 
     # Builds the object from hash

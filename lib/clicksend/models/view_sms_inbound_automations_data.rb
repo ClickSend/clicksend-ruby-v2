@@ -39,6 +39,18 @@ module ClickSend
     # The number of the last result in the current page.
     attr_accessor :to
 
+    # The URL of the first page of records.
+    attr_accessor :first_page_url
+
+    # The URL of the last page of records.
+    attr_accessor :last_page_url
+
+    # The base URL path used to build pagination links.
+    attr_accessor :path
+
+    # The list of pagination links.
+    attr_accessor :links
+
     attr_accessor :data
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -52,6 +64,10 @@ module ClickSend
         :'prev_page_url' => :'prev_page_url',
         :'from' => :'from',
         :'to' => :'to',
+        :'first_page_url' => :'first_page_url',
+        :'last_page_url' => :'last_page_url',
+        :'path' => :'path',
+        :'links' => :'links',
         :'data' => :'data'
       }
     end
@@ -77,6 +93,10 @@ module ClickSend
         :'prev_page_url' => :'String',
         :'from' => :'Integer',
         :'to' => :'Integer',
+        :'first_page_url' => :'String',
+        :'last_page_url' => :'String',
+        :'path' => :'String',
+        :'links' => :'Array<ViewSmsInboundAutomationsDataAllOfLinksInner>',
         :'data' => :'Array<SmsInboundRule>'
       }
     end
@@ -86,6 +106,8 @@ module ClickSend
       Set.new([
         :'next_page_url',
         :'prev_page_url',
+        :'first_page_url',
+        :'last_page_url',
       ])
     end
 
@@ -144,6 +166,24 @@ module ClickSend
         self.to = attributes[:'to']
       end
 
+      if attributes.key?(:'first_page_url')
+        self.first_page_url = attributes[:'first_page_url']
+      end
+
+      if attributes.key?(:'last_page_url')
+        self.last_page_url = attributes[:'last_page_url']
+      end
+
+      if attributes.key?(:'path')
+        self.path = attributes[:'path']
+      end
+
+      if attributes.key?(:'links')
+        if (value = attributes[:'links']).is_a?(Array)
+          self.links = value
+        end
+      end
+
       if attributes.key?(:'data')
         if (value = attributes[:'data']).is_a?(Array)
           self.data = value
@@ -179,6 +219,10 @@ module ClickSend
           prev_page_url == o.prev_page_url &&
           from == o.from &&
           to == o.to &&
+          first_page_url == o.first_page_url &&
+          last_page_url == o.last_page_url &&
+          path == o.path &&
+          links == o.links &&
           data == o.data
     end
 
@@ -191,7 +235,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data].hash
+      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, first_page_url, last_page_url, path, links, data].hash
     end
 
     # Builds the object from hash

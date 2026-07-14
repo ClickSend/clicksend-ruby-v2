@@ -15,7 +15,7 @@ require 'time'
 
 module ClickSend
   class Sms < ApiModelBase
-    # The date you sent the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>.
+    # The date you sent the message. It is in <a href=\"http://help.clicksend.com/what-is-a-unix-timestamp\" target=\"_blank\">Unix format</a>. Returned as a string since it may be an empty string in price-calculation responses where no message has actually been sent yet.
     attr_accessor :date
 
     # The phone number of the recipient. It should be in <a href=\"https://en.wikipedia.org/wiki/E.164\" target=\"_blank\">E.164 format</a>.
@@ -86,7 +86,7 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'date' => :'Integer',
+        :'date' => :'String',
         :'to' => :'String',
         :'body' => :'String',
         :'from' => :'String',

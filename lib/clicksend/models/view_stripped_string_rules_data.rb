@@ -15,10 +15,10 @@ require 'time'
 
 module ClickSend
   class ViewStrippedStringRulesData < ApiModelBase
-    # The total number of records in the response.
+    # The total number of items available for viewing.
     attr_accessor :total
 
-    # The number of records per page.
+    # The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
     attr_accessor :per_page
 
     # The current page number.
@@ -27,11 +27,17 @@ module ClickSend
     # The last page number.
     attr_accessor :last_page
 
-    # The URL of the next page of records.
+    # A URL of the next page. It will return **null** if there’s no next page.
     attr_accessor :next_page_url
 
-    # The URL of the previous page of records.
+    # A URL of the previous page. It will return **null** if there’s no previous page.
     attr_accessor :prev_page_url
+
+    # The number of the first result in the current page.
+    attr_accessor :from
+
+    # The number of the last result in the current page.
+    attr_accessor :to
 
     attr_accessor :data
 
@@ -44,6 +50,8 @@ module ClickSend
         :'last_page' => :'last_page',
         :'next_page_url' => :'next_page_url',
         :'prev_page_url' => :'prev_page_url',
+        :'from' => :'from',
+        :'to' => :'to',
         :'data' => :'data'
       }
     end
@@ -67,7 +75,9 @@ module ClickSend
         :'last_page' => :'Integer',
         :'next_page_url' => :'String',
         :'prev_page_url' => :'String',
-        :'data' => :'Array<ViewStrippedStringRulesDataDataInner>'
+        :'from' => :'Integer',
+        :'to' => :'Integer',
+        :'data' => :'Array<ViewStrippedStringRulesDataAllOfDataInner>'
       }
     end
 
@@ -77,6 +87,13 @@ module ClickSend
         :'next_page_url',
         :'prev_page_url',
       ])
+    end
+
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'Pagination'
+      ]
     end
 
     # Initializes the object
@@ -119,6 +136,14 @@ module ClickSend
         self.prev_page_url = attributes[:'prev_page_url']
       end
 
+      if attributes.key?(:'from')
+        self.from = attributes[:'from']
+      end
+
+      if attributes.key?(:'to')
+        self.to = attributes[:'to']
+      end
+
       if attributes.key?(:'data')
         if (value = attributes[:'data']).is_a?(Array)
           self.data = value
@@ -152,6 +177,8 @@ module ClickSend
           last_page == o.last_page &&
           next_page_url == o.next_page_url &&
           prev_page_url == o.prev_page_url &&
+          from == o.from &&
+          to == o.to &&
           data == o.data
     end
 
@@ -164,7 +191,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total, per_page, current_page, last_page, next_page_url, prev_page_url, data].hash
+      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data].hash
     end
 
     # Builds the object from hash

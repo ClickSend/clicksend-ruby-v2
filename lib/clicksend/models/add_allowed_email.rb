@@ -52,7 +52,7 @@ module ClickSend
         :'http_code' => :'Integer',
         :'response_code' => :'String',
         :'response_msg' => :'String',
-        :'data' => :'ViewAllowedEmailsDataInner'
+        :'data' => :'AddAllowedEmailData'
       }
     end
 

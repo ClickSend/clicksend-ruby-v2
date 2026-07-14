@@ -39,10 +39,10 @@ module ClickSend
     # List of country codes where the alpha tag is requested. If not provided, it means a global alpha tag.
     attr_accessor :countries
 
-    # The timestamp when the record was created.
+    # The timestamp when the record was created. Usually ISO 8601 (e.g. \"2021-05-11T01:00:00.123Z\"), but returned as a plain string rather than a strict date-time since some older records don't include a UTC offset (e.g. \"2024-01-10T10:55:26.818097\").
     attr_accessor :created_timestamp
 
-    # The timestamp when the record was last updated.
+    # The timestamp when the record was last updated. Usually ISO 8601 (e.g. \"2021-05-11T01:05:00.123Z\"), but returned as a plain string rather than a strict date-time since some older records don't include a UTC offset.
     attr_accessor :updated_timestamp
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -82,8 +82,8 @@ module ClickSend
         :'status' => :'String',
         :'reason' => :'String',
         :'countries' => :'Array<String>',
-        :'created_timestamp' => :'Time',
-        :'updated_timestamp' => :'Time'
+        :'created_timestamp' => :'String',
+        :'updated_timestamp' => :'String'
       }
     end
 

@@ -1,4 +1,4 @@
-# ClickSend::ViewStrippedStringRulesDataDataInner
+# ClickSend::ViewStrippedStringRulesDataAllOfDataInner
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'clicksend'
 
-instance = ClickSend::ViewStrippedStringRulesDataDataInner.new(
+instance = ClickSend::ViewStrippedStringRulesDataAllOfDataInner.new(
   rule_id: null,
   strip_string: null
 )

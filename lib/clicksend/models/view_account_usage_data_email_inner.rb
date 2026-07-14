@@ -26,13 +26,17 @@ module ClickSend
 
     attr_accessor :total_price
 
+    # Optional notes.
+    attr_accessor :notes
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'subaccount_id' => :'subaccount_id',
         :'username' => :'username',
         :'total_count' => :'total_count',
-        :'total_price' => :'total_price'
+        :'total_price' => :'total_price',
+        :'notes' => :'notes'
       }
     end
 
@@ -52,13 +56,15 @@ module ClickSend
         :'subaccount_id' => :'Integer',
         :'username' => :'String',
         :'total_count' => :'Integer',
-        :'total_price' => :'String'
+        :'total_price' => :'String',
+        :'notes' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'notes'
       ])
     end
 
@@ -93,6 +99,10 @@ module ClickSend
       if attributes.key?(:'total_price')
         self.total_price = attributes[:'total_price']
       end
+
+      if attributes.key?(:'notes')
+        self.notes = attributes[:'notes']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -118,7 +128,8 @@ module ClickSend
           subaccount_id == o.subaccount_id &&
           username == o.username &&
           total_count == o.total_count &&
-          total_price == o.total_price
+          total_price == o.total_price &&
+          notes == o.notes
     end
 
     # @see the `==` method
@@ -130,7 +141,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [subaccount_id, username, total_count, total_price].hash
+      [subaccount_id, username, total_count, total_price, notes].hash
     end
 
     # Builds the object from hash

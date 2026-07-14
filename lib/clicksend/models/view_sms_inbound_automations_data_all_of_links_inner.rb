@@ -14,45 +14,26 @@ require 'date'
 require 'time'
 
 module ClickSend
-  class ViewAllMmsCampaignsData < ApiModelBase
-    # The total number of items available for viewing.
-    attr_accessor :total
+  class ViewSmsInboundAutomationsDataAllOfLinksInner < ApiModelBase
+    # The URL of this page link.
+    attr_accessor :url
 
-    # The number of items returned per page. This is specified in the limit parameter. You can have 100 items at maximum, and 15 at minimum.
-    attr_accessor :per_page
+    # The display label for this page link.
+    attr_accessor :label
 
-    # The current page number.
-    attr_accessor :current_page
+    # The page number this link points to.
+    attr_accessor :page
 
-    # The last page number.
-    attr_accessor :last_page
-
-    # A URL of the next page. It will return **null** if there’s no next page.
-    attr_accessor :next_page_url
-
-    # A URL of the previous page. It will return **null** if there’s no previous page.
-    attr_accessor :prev_page_url
-
-    # The number of the first result in the current page.
-    attr_accessor :from
-
-    # The number of the last result in the current page.
-    attr_accessor :to
-
-    attr_accessor :data
+    # Whether this link represents the current page.
+    attr_accessor :active
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'total' => :'total',
-        :'per_page' => :'per_page',
-        :'current_page' => :'current_page',
-        :'last_page' => :'last_page',
-        :'next_page_url' => :'next_page_url',
-        :'prev_page_url' => :'prev_page_url',
-        :'from' => :'from',
-        :'to' => :'to',
-        :'data' => :'data'
+        :'url' => :'url',
+        :'label' => :'label',
+        :'page' => :'page',
+        :'active' => :'active'
       }
     end
 
@@ -69,85 +50,51 @@ module ClickSend
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'total' => :'Integer',
-        :'per_page' => :'Integer',
-        :'current_page' => :'Integer',
-        :'last_page' => :'Integer',
-        :'next_page_url' => :'String',
-        :'prev_page_url' => :'String',
-        :'from' => :'Integer',
-        :'to' => :'Integer',
-        :'data' => :'Array<MmsCampaign>'
+        :'url' => :'String',
+        :'label' => :'String',
+        :'page' => :'Integer',
+        :'active' => :'Boolean'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'next_page_url',
-        :'prev_page_url',
+        :'url',
+        :'page',
       ])
-    end
-
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'Pagination'
-      ]
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewAllMmsCampaignsData` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `ClickSend::ViewSmsInboundAutomationsDataAllOfLinksInner` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewAllMmsCampaignsData`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `ClickSend::ViewSmsInboundAutomationsDataAllOfLinksInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'total')
-        self.total = attributes[:'total']
+      if attributes.key?(:'url')
+        self.url = attributes[:'url']
       end
 
-      if attributes.key?(:'per_page')
-        self.per_page = attributes[:'per_page']
+      if attributes.key?(:'label')
+        self.label = attributes[:'label']
       end
 
-      if attributes.key?(:'current_page')
-        self.current_page = attributes[:'current_page']
+      if attributes.key?(:'page')
+        self.page = attributes[:'page']
       end
 
-      if attributes.key?(:'last_page')
-        self.last_page = attributes[:'last_page']
-      end
-
-      if attributes.key?(:'next_page_url')
-        self.next_page_url = attributes[:'next_page_url']
-      end
-
-      if attributes.key?(:'prev_page_url')
-        self.prev_page_url = attributes[:'prev_page_url']
-      end
-
-      if attributes.key?(:'from')
-        self.from = attributes[:'from']
-      end
-
-      if attributes.key?(:'to')
-        self.to = attributes[:'to']
-      end
-
-      if attributes.key?(:'data')
-        if (value = attributes[:'data']).is_a?(Array)
-          self.data = value
-        end
+      if attributes.key?(:'active')
+        self.active = attributes[:'active']
       end
     end
 
@@ -171,15 +118,10 @@ module ClickSend
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          total == o.total &&
-          per_page == o.per_page &&
-          current_page == o.current_page &&
-          last_page == o.last_page &&
-          next_page_url == o.next_page_url &&
-          prev_page_url == o.prev_page_url &&
-          from == o.from &&
-          to == o.to &&
-          data == o.data
+          url == o.url &&
+          label == o.label &&
+          page == o.page &&
+          active == o.active
     end
 
     # @see the `==` method
@@ -191,7 +133,7 @@ module ClickSend
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [total, per_page, current_page, last_page, next_page_url, prev_page_url, from, to, data].hash
+      [url, label, page, active].hash
     end
 
     # Builds the object from hash

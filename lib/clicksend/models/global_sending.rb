@@ -30,7 +30,6 @@ module ClickSend
     # The date when the country was agreed upon.
     attr_accessor :agreed_at
 
-    # The entity responsible for the registration.
     attr_accessor :registration_entity
 
     attr_accessor :registration_status
@@ -110,14 +109,14 @@ module ClickSend
         :'code' => :'String',
         :'region' => :'String',
         :'agreed_at' => :'String',
-        :'registration_entity' => :'String',
+        :'registration_entity' => :'AccountReferrerChosen',
         :'registration_status' => :'GlobalSendingRegistrationStatus',
         :'jotform_id' => :'String',
         :'sms_registration_type' => :'Integer',
-        :'block_registration' => :'Integer',
-        :'block_leads' => :'Integer',
+        :'block_registration' => :'Boolean',
+        :'block_leads' => :'Boolean',
         :'trial_from_address' => :'String',
-        :'restricted_sending' => :'Integer',
+        :'restricted_sending' => :'Boolean',
         :'trial_sending' => :'Integer',
         :'trial_sending_description' => :'String',
         :'has_regulation_requirements' => :'Integer',

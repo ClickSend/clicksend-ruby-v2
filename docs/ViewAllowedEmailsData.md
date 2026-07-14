@@ -1,4 +1,4 @@
-# ClickSend::ViewAllMmsCampaignsData
+# ClickSend::ViewAllowedEmailsData
 
 ## Properties
 
@@ -12,14 +12,14 @@
 | **prev_page_url** | **String** | A URL of the previous page. It will return **null** if there’s no previous page. | [optional] |
 | **from** | **Integer** | The number of the first result in the current page. | [optional] |
 | **to** | **Integer** | The number of the last result in the current page. | [optional] |
-| **data** | [**Array&lt;MmsCampaign&gt;**](MmsCampaign.md) |  | [optional] |
+| **data** | [**Array&lt;ViewAllowedEmailsDataAllOfDataInner&gt;**](ViewAllowedEmailsDataAllOfDataInner.md) |  | [optional] |
 
 ## Example
 
 ```ruby
 require 'clicksend'
 
-instance = ClickSend::ViewAllMmsCampaignsData.new(
+instance = ClickSend::ViewAllowedEmailsData.new(
   total: 2,
   per_page: 15,
   current_page: 1,
@@ -28,7 +28,7 @@ instance = ClickSend::ViewAllMmsCampaignsData.new(
   prev_page_url: null,
   from: 1,
   to: 2,
-  data: null
+  data: [{&quot;email_address_id&quot;:84,&quot;email_address&quot;:&quot;my@email.com&quot;,&quot;from&quot;:&quot;+13523944199&quot;,&quot;subaccount_id&quot;:345789,&quot;from_fax&quot;:&quot;&quot;,&quot;voice&quot;:&quot;male&quot;,&quot;lang&quot;:&quot;en-us&quot;,&quot;_subaccount_name&quot;:&quot;my@email.com&quot;},{&quot;email_address_id&quot;:85,&quot;email_address&quot;:&quot;my@email.com&quot;,&quot;from&quot;:&quot;+13523944199&quot;,&quot;subaccount_id&quot;:345789,&quot;from_fax&quot;:&quot;&quot;,&quot;voice&quot;:&quot;male&quot;,&quot;lang&quot;:&quot;en-us&quot;,&quot;_subaccount_name&quot;:&quot;my@email.com&quot;}]
 )
 ```
 

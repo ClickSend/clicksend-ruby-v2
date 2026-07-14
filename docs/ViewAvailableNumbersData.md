@@ -13,6 +13,7 @@
 | **from** | **Integer** | The number of the first result in the current page. | [optional] |
 | **to** | **Integer** | The number of the last result in the current page. | [optional] |
 | **data** | [**Array&lt;ViewAvailableNumbersDataAllOfDataInner&gt;**](ViewAvailableNumbersDataAllOfDataInner.md) |  | [optional] |
+| **_currency** | [**Currency**](Currency.md) |  | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = ClickSend::ViewAvailableNumbersData.new(
   prev_page_url: null,
   from: 1,
   to: 2,
-  data: [{&quot;country&quot;:&quot;AU&quot;,&quot;country_name&quot;:&quot;Australia&quot;,&quot;dedicated_number&quot;:&quot;+61280662298&quot;,&quot;price_setup&quot;:&quot;0.0000&quot;,&quot;price_monthly&quot;:&quot;20.7100&quot;,&quot;price_total&quot;:&quot;20.7100&quot;,&quot;address_requirement&quot;:&quot;local&quot;},{&quot;country&quot;:&quot;AU&quot;,&quot;country_name&quot;:&quot;Australia&quot;,&quot;dedicated_number&quot;:&quot;+61280662299&quot;,&quot;price_setup&quot;:&quot;0.0000&quot;,&quot;price_monthly&quot;:&quot;20.7100&quot;,&quot;price_total&quot;:&quot;20.7100&quot;,&quot;address_requirement&quot;:&quot;local&quot;}]
+  data: [{&quot;country&quot;:&quot;AU&quot;,&quot;country_name&quot;:&quot;Australia&quot;,&quot;dedicated_number&quot;:&quot;+61280662298&quot;,&quot;price_setup&quot;:&quot;0.0000&quot;,&quot;price_monthly&quot;:&quot;20.7100&quot;,&quot;price_total&quot;:&quot;20.7100&quot;,&quot;address_requirement&quot;:&quot;local&quot;},{&quot;country&quot;:&quot;AU&quot;,&quot;country_name&quot;:&quot;Australia&quot;,&quot;dedicated_number&quot;:&quot;+61280662299&quot;,&quot;price_setup&quot;:&quot;0.0000&quot;,&quot;price_monthly&quot;:&quot;20.7100&quot;,&quot;price_total&quot;:&quot;20.7100&quot;,&quot;address_requirement&quot;:&quot;local&quot;}],
+  _currency: null
 )
 ```
 

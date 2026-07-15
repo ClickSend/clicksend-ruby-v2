@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **total_count** | **Integer** | The total number of records. | [optional] |
-| **total_price** | **Float** | The total price of the SMS campaign. | [optional] |
+| **total_price** | **String** | The total price of the SMS campaign. | [optional] |
 | **data** | [**CalculateSmsCampaignPriceDataData**](CalculateSmsCampaignPriceDataData.md) |  | [optional] |
 | **_currency** | [**Currency**](Currency.md) |  | [optional] |
 

@@ -8,7 +8,7 @@
 | **name** | **String** | The name of the country. | [optional] |
 | **code** | **String** | The country code. | [optional] |
 | **region** | **String** | The region of the country. | [optional] |
-| **agreed_at** | **String** | The date when the country was agreed upon. | [optional] |
+| **agreed_at** | **Integer** | The date when the country was agreed upon. | [optional] |
 | **registration_entity** | [**AccountReferrerChosen**](AccountReferrerChosen.md) |  | [optional] |
 | **registration_status** | [**GlobalSendingRegistrationStatus**](GlobalSendingRegistrationStatus.md) |  | [optional] |
 | **jotform_id** | **String** | The ID of the country in JotForm. | [optional] |

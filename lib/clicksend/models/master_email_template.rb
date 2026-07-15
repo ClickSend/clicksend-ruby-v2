@@ -55,7 +55,7 @@ module ClickSend
       {
         :'template_id_master' => :'Integer',
         :'template_name' => :'String',
-        :'date_added' => :'String',
+        :'date_added' => :'Integer',
         :'body' => :'String',
         :'thumbnail' => :'MasterEmailTemplateThumbnail'
       }

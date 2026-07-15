@@ -7,7 +7,7 @@
 | **subaccount_id** | **Integer** | The subaccount identifier. | [optional] |
 | **username** | **String** | The username associated with the subaccount. | [optional] |
 | **total_count** | **Integer** | The total count of emails. | [optional] |
-| **total_price** | **String** |  | [optional] |
+| **total_price** | **Float** |  | [optional] |
 | **notes** | **String** | Optional notes. | [optional] |
 
 ## Example

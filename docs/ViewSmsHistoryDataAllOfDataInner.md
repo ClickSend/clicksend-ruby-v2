@@ -16,7 +16,7 @@
 | **error_code** | **String** | The error code of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] |
 | **error_text** | **String** | A message describing the _error_code_ of the operation. Visit &lt;a href&#x3D;\&quot;https://help.clicksend.com/article/8cc479qlbb-list-of-sms-gateway-error-codes\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this page&lt;/a&gt; for more information. If no error occurred, the value is **null**. | [optional] |
 | **message_id** | **String** | The generated ID of the message. | [optional] |
-| **message_parts** | **String** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;&lt;strong&gt;SMS Character Count&lt;/strong&gt;&lt;/a&gt;. | [optional] |
+| **message_parts** | **Integer** | The number of parts the message was broken into. To look at how many parts your message is broken down into, use the &lt;a href&#x3D;\&quot;http://smscharactercount.com/\&quot; target&#x3D;\&quot;_blank\&quot;&gt;&lt;strong&gt;SMS Character Count&lt;/strong&gt;&lt;/a&gt;. | [optional] |
 | **message_price** | **String** | The price of this message. This depends on the total number of parts of the message. | [optional] |
 | **from_email** | **String** | The email address to which replies should be emailed to. If omitted, the reply will be emailed back to the user who sent the outgoing SMS | [optional] |
 | **list_id** | **String** | The _list_id_ of the contact list the message was sent to. This parameter will have a **null** value if you didn’t send to a list in the request. | [optional] |
@@ -48,7 +48,7 @@ instance = ClickSend::ViewSmsHistoryDataAllOfDataInner.new(
   error_code: null,
   error_text: null,
   message_id: 4E90F4C3-43A3-489D-9AB8-DA1F4332A0C3,
-  message_parts: 1.00,
+  message_parts: 1,
   message_price: 0.070000,
   from_email: null,
   list_id: null,

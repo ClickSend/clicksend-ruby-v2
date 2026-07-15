@@ -108,7 +108,7 @@ module ClickSend
         :'name' => :'String',
         :'code' => :'String',
         :'region' => :'String',
-        :'agreed_at' => :'String',
+        :'agreed_at' => :'Integer',
         :'registration_entity' => :'AccountReferrerChosen',
         :'registration_status' => :'GlobalSendingRegistrationStatus',
         :'jotform_id' => :'String',

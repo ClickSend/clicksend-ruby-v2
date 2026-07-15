@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **from** | **String** | The sender. | [optional] |
 | **body** | **String** | The message body. | [optional] |
-| **schedule** | **String** | The schedule timestamp. | [optional] |
+| **schedule** | **Integer** | The schedule timestamp. | [optional] |
 
 ## Example
 

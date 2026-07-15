@@ -42,7 +42,6 @@ module ClickSend
     # The voice of the message.
     attr_accessor :voice
 
-    # The timestamp when the message should be sent. Returned as a string since it may be an empty string when no schedule was set.
     attr_accessor :schedule
 
     # The ID of the message.
@@ -147,9 +146,9 @@ module ClickSend
         :'from' => :'String',
         :'lang' => :'String',
         :'voice' => :'String',
-        :'schedule' => :'String',
+        :'schedule' => :'VoiceMessageSchedule',
         :'message_id' => :'String',
-        :'message_parts' => :'String',
+        :'message_parts' => :'Integer',
         :'message_price' => :'String',
         :'custom_string' => :'String',
         :'user_id' => :'Float',

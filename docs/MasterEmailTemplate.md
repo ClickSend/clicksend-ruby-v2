@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **template_id_master** | **Integer** | The unique identifier for the template. | [optional] |
 | **template_name** | **String** | The name of the template. | [optional] |
-| **date_added** | **String** | The date the template was added. | [optional] |
+| **date_added** | **Integer** | The date the template was added. | [optional] |
 | **body** | **String** | The body of the template. | [optional] |
 | **thumbnail** | [**MasterEmailTemplateThumbnail**](MasterEmailTemplateThumbnail.md) |  | [optional] |
 

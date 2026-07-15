@@ -13,8 +13,8 @@
 | **custom_2** | **String** | Custom field 2. | [optional] |
 | **custom_3** | **String** | Custom field 3. | [optional] |
 | **custom_4** | **String** | Custom field 4. | [optional] |
-| **date_added** | **String** | The date when the contact was added. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \&quot;1783997542\&quot;) instead of ISO 8601. | [optional] |
-| **date_updated** | **String** | The date when the contact was last updated. Returned as a plain string rather than a strict date-time since the API sometimes returns a raw Unix timestamp (e.g. \&quot;1783997542\&quot;) instead of ISO 8601. | [optional] |
+| **date_added** | **Integer** | The date when the contact was added, as a &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix timestamp&lt;/a&gt;. | [optional] |
+| **date_updated** | **Integer** | The date when the contact was last updated, as a &lt;a href&#x3D;\&quot;http://help.clicksend.com/what-is-a-unix-timestamp\&quot; target&#x3D;\&quot;_blank\&quot;&gt;Unix timestamp&lt;/a&gt;. | [optional] |
 | **fax_number** | **String** | The fax number of the contact. | [optional] |
 | **organization_name** | **String** | The organization name of the contact. | [optional] |
 | **email** | **String** | The email address of the contact. | [optional] |
@@ -41,8 +41,8 @@ instance = ClickSend::Contact.new(
   custom_2: Custom 2,
   custom_3: Custom 3,
   custom_4: Custom 4,
-  date_added: 2015-07-05T14:51:26Z,
-  date_updated: 2015-07-05T14:51:26Z,
+  date_added: 1783997542,
+  date_updated: 1783997542,
   fax_number: +61477141888,
   organization_name: Awesome Company,
   email: john@doe.com,

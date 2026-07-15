@@ -49,7 +49,7 @@ module ClickSend
     def self.openapi_types
       {
         :'total_count' => :'Integer',
-        :'total_price' => :'Float',
+        :'total_price' => :'String',
         :'data' => :'CalculateSmsCampaignPriceDataData',
         :'_currency' => :'Currency'
       }

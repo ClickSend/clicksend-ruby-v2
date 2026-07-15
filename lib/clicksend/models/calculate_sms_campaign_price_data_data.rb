@@ -48,7 +48,7 @@ module ClickSend
       {
         :'from' => :'String',
         :'body' => :'String',
-        :'schedule' => :'String'
+        :'schedule' => :'Integer'
       }
     end
 

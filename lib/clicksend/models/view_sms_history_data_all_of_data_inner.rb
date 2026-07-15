@@ -146,7 +146,7 @@ module ClickSend
         :'error_code' => :'String',
         :'error_text' => :'String',
         :'message_id' => :'String',
-        :'message_parts' => :'String',
+        :'message_parts' => :'Integer',
         :'message_price' => :'String',
         :'from_email' => :'String',
         :'list_id' => :'String',

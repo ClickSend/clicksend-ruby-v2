@@ -15,7 +15,7 @@
 | **voice** | **String** | The voice of the message. | [optional] |
 | **schedule** | [**VoiceMessageSchedule**](VoiceMessageSchedule.md) |  | [optional] |
 | **message_id** | **String** | The ID of the message. | [optional] |
-| **message_parts** | **Integer** | The number of parts in the message. | [optional] |
+| **message_parts** | [**VoiceMessageSchedule**](VoiceMessageSchedule.md) |  | [optional] |
 | **message_price** | **String** | The price of the message. | [optional] |
 | **custom_string** | **String** | The custom string of the message. | [optional] |
 | **user_id** | **Float** | The ID of the user. | [optional] |
@@ -48,7 +48,7 @@ instance = ClickSend::VoiceMessage.new(
   voice: female,
   schedule: null,
   message_id: BF7AD270-0DE2-418B-B606-71D527D9C1AE,
-  message_parts: 1,
+  message_parts: null,
   message_price: 0.07,
   custom_string: this is a test,
   user_id: 1,

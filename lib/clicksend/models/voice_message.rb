@@ -47,7 +47,6 @@ module ClickSend
     # The ID of the message.
     attr_accessor :message_id
 
-    # The number of parts in the message.
     attr_accessor :message_parts
 
     # The price of the message.
@@ -148,7 +147,7 @@ module ClickSend
         :'voice' => :'String',
         :'schedule' => :'VoiceMessageSchedule',
         :'message_id' => :'String',
-        :'message_parts' => :'Integer',
+        :'message_parts' => :'VoiceMessageSchedule',
         :'message_price' => :'String',
         :'custom_string' => :'String',
         :'user_id' => :'Float',

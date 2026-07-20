@@ -27,17 +27,51 @@ ClickSend.configure do |config|
 end
 
 api_instance = ClickSend::SmsApi.new
-sms_message_collection = ClickSend::SmsMessageCollection.new(
+send_sms_request = ClickSend::SendSmsRequest.new(
   messages: [
     { source: 'sdk', body: 'Hello from ClickSend!', to: '+61411111111' }
   ]
 )
 
 begin
-  result = api_instance.sms_send_post(sms_message_collection)
+  result = api_instance.send_sms(send_sms_request: send_sms_request)
   p result
 rescue ClickSend::ApiError => e
-  puts "Exception when calling SmsApi->sms_send_post: #{e}"
+  puts "Exception when calling SmsApi->send_sms: #{e}"
+end
+```
+
+## More Examples
+
+### View account details
+
+```ruby
+api_instance = ClickSend::ManagementApi.new
+
+begin
+  result = api_instance.view_account_details
+  p result
+rescue ClickSend::ApiError => e
+  puts "Exception when calling ManagementApi->view_account_details: #{e}"
+end
+```
+
+### Send an MMS
+
+```ruby
+api_instance = ClickSend::MmsApi.new
+send_mms_request = ClickSend::SendMmsRequest.new(
+  media_file: 'https://clicksend.com/logo.png',
+  messages: [
+    { source: 'sdk', to: '+61411111111', from: 'sdk', subject: 'Hello', body: 'Hello from ClickSend!' }
+  ]
+)
+
+begin
+  result = api_instance.send_mms(send_mms_request: send_mms_request)
+  p result
+rescue ClickSend::ApiError => e
+  puts "Exception when calling MmsApi->send_mms: #{e}"
 end
 ```
 

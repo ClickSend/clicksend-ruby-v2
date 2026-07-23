@@ -86,7 +86,7 @@ module ClickSend
       if attributes.key?(:'source')
         self.source = attributes[:'source']
       else
-        self.source = 'sdk'
+        self.source = 'sdk-ruby'
       end
 
       if attributes.key?(:'to')

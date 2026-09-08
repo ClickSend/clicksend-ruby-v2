@@ -19,14 +19,18 @@ Gem::Specification.new do |s|
   s.name        = "clicksend"
   s.version     = ClickSend::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["OpenAPI-Generator"]
-  s.email       = [""]
-  s.homepage    = "https://openapi-generator.tech"
-  s.summary     = "SMS Ruby Gem"
-  s.description = "You can use the SMS endpoints to send and manage SMS, check the cost of sending SMS, view message history, and more. Integrate them into your system as part of your workflow.  Relevant guides: <a href=\"https://help.clicksend.com/article/h474eseq3a-how-many-characters-can-i-send-in-an-sms\" target=\"_blank\">How many characters can I send in an SMS?</a>, <a href=\"https://help.clicksend.com/article/1hd33n2xns-sms-status-delivery-receipt-expired\" target=\"_blank\">SMS status delivery receipt expired</a>, <a href=\"https://help.clicksend.com/en/articles/42195-unicode-vs-plain-text\" target=\"_blank\">Do you support non-English characters</a>, and <a href=\"https://help.clicksend.com/category/mfdctha7f0-country-specific-features-and-restrictions\" target=\"_blank\">Country Specific Features and Restrictions</a>. <div class=\"info-box\">   <h4><i class=\"fas fa-info-circle\"></i> Note :</h4>   ClickSend is pausing SMS messages containing URLs for new customers. Please remove links from messages to maintain uninterrupted delivery, or <a href=\"https://www.clicksend.com/gb/help/\" target=\"_blank\">contact support</a> to apply for approval for URL messaging. </div>"
-  s.license     = "Unlicense"
+  s.authors     = ["ClickSend"]
+  s.email       = ["support@clicksend.com"]
+  s.homepage    = "https://developers.clicksend.com/"
+  s.summary     = "Official ClickSend SDK for Ruby"
+  s.description = "Official ClickSend SDK for Ruby - send SMS, MMS, voice and email messages, run SMS and MMS campaigns, and manage numbers, contacts, subaccounts and reporting through the ClickSend REST API."
+  s.license     = "MIT"
   s.required_ruby_version = ">= 2.7"
-  s.metadata    = {}
+  s.metadata    = {
+    "source_code_uri" => "https://github.com/ClickSend/clicksend-ruby-v2",
+    "bug_tracker_uri" => "https://github.com/ClickSend/clicksend-ruby-v2/issues",
+    "documentation_uri" => "https://developers.clicksend.com/docs/rest/v3/"
+  }
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
 

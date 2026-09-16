@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **sender_type** | **String** | Type of sender |  |
-| **allowed_sender_countries** | [**ListCompliantSenderTypes200ResponseDataDataInnerAllowedSenderTypesInnerAllowedSenderCountries**](ListCompliantSenderTypes200ResponseDataDataInnerAllowedSenderTypesInnerAllowedSenderCountries.md) |  |  |
+| **allowed_sender_countries** | [**AllowedSenderCountries**](AllowedSenderCountries.md) |  |  |
 
 ## Example
 

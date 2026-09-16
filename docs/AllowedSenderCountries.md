@@ -1,4 +1,4 @@
-# ClickSend::ListCompliantSenderTypes200ResponseDataDataInnerAllowedSenderTypesInnerAllowedSenderCountries
+# ClickSend::AllowedSenderCountries
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'clicksend_client'
 
-instance = ClickSend::ListCompliantSenderTypes200ResponseDataDataInnerAllowedSenderTypesInnerAllowedSenderCountries.new(
+instance = ClickSend::AllowedSenderCountries.new(
   global: null,
   country_codes: null
 )

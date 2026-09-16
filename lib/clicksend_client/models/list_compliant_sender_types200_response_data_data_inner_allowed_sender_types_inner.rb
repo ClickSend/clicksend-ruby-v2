@@ -64,7 +64,7 @@ module ClickSend
     def self.openapi_types
       {
         :'sender_type' => :'String',
-        :'allowed_sender_countries' => :'ListCompliantSenderTypes200ResponseDataDataInnerAllowedSenderTypesInnerAllowedSenderCountries'
+        :'allowed_sender_countries' => :'AllowedSenderCountries'
       }
     end
 

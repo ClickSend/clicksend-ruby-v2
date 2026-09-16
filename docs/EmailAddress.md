@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::EmailAddress.new(
   email_address_id: 2,

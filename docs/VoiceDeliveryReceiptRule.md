@@ -14,7 +14,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::VoiceDeliveryReceiptRule.new(
   receipt_rule_id: 2,

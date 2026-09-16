@@ -7,5 +7,5 @@ rvm:
 script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
-  - gem build clicksend.gemspec
-  - gem install ./clicksend-1.0.0.gem
+  - gem build clicksend_client.gemspec
+  - gem install ./clicksend_client-1.0.0.gem

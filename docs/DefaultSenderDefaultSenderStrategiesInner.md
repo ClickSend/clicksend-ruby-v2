@@ -14,7 +14,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::DefaultSenderDefaultSenderStrategiesInner.new(
   sender_type: alpha_tag,

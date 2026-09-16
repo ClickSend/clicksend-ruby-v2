@@ -23,7 +23,7 @@ _Create reseller account_  ### Properties  | Name | Type | Required | Restrictio
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -97,7 +97,7 @@ _Transfer Credit_  ### Properties  | Name | Type | Required | Restrictions | Des
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -171,7 +171,7 @@ _Update Reseller clients Account_  ### Parameters  | Parameter | In | Type | Req
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -247,7 +247,7 @@ _Get list of reseller accounts_  ### Parameters  | Parameter | In | Type | Requi
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -319,7 +319,7 @@ _Get Reseller clients Account_  ### Parameters  | Parameter | In | Type | Requir
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

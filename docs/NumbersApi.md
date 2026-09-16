@@ -22,7 +22,7 @@ _Buy dedicated number_  This endpoint allows you to purchase a dedicated phone n
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -100,7 +100,7 @@ Register Numbers
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -178,7 +178,7 @@ _Get all dedicated numbers by country_  ### Parameters  | Parameter | In | Type 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -252,7 +252,7 @@ _Get all available dedicated numbers_  ### Parameters  | Parameter | In | Type |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

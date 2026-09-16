@@ -15,7 +15,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SendMmsCampaignRequest.new(
   list_id: null,

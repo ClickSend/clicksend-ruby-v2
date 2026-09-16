@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewEmailCampaign.new(
   http_code: 200,

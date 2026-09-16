@@ -19,7 +19,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewYourNumbersDataAllOfDataInner.new(
   dedicated_number: +61411111111,

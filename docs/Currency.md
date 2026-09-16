@@ -14,7 +14,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::Currency.new(
   currency_name_short: AUD,

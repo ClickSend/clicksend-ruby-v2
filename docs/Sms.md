@@ -21,7 +21,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::Sms.new(
   date: 1436871253,

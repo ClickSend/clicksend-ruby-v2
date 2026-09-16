@@ -15,7 +15,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CreateDeliveryIssueRequest.new(
   message_id: null,

@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CalculateMmsCampaignPriceData.new(
   total_count: 1,

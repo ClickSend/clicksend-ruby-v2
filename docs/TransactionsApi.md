@@ -24,7 +24,7 @@ _Get current payment info_  This endpoint returns your current payment info, we 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -96,7 +96,7 @@ _Purchase a package_  ### Parameters  | Parameter | In | Type | Required | Descr
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -170,7 +170,7 @@ _Update credit card info_  ### Properties  | Name | Type | Required | Restrictio
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -244,7 +244,7 @@ _Purchase a package_  Get all transactions  ### Parameters  | Parameter | In | T
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -316,7 +316,7 @@ _Get list of all packages_  ### Parameters  | Parameter | In | Type | Required |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -388,7 +388,7 @@ _Get specific Transaction_  ### Parameters  | Parameter | In | Type | Required |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

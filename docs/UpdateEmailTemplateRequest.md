@@ -9,7 +9,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::UpdateEmailTemplateRequest.new(
   body: null

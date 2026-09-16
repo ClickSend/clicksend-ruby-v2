@@ -14,7 +14,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CreateReturnAddressRequest.new(
   address_name: null,

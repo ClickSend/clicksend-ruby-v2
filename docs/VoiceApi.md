@@ -23,7 +23,7 @@ _Create voice delivery receipt automations_  Create voice delivery receipt autom
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -97,7 +97,7 @@ _Delete voice delivery receipt automation_  Delete voice delivery receipt automa
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -171,7 +171,7 @@ _Update voice delivery receipt automation_  Update voice delivery receipt automa
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -247,7 +247,7 @@ _Get specific voice delivery receipt automation_  Get specific voice delivery re
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -321,7 +321,7 @@ _Get all voice delivery receipt automations_  Get all voice delivery receipt aut
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

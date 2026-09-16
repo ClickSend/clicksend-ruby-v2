@@ -13,10 +13,10 @@ Generator version: 7.23.0
 =end
 
 $:.push File.expand_path("../lib", __FILE__)
-require "clicksend/version"
+require "clicksend_client/version"
 
 Gem::Specification.new do |s|
-  s.name        = "clicksend"
+  s.name        = "clicksend_client"
   s.version     = ClickSend::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["ClickSend"]

@@ -22,7 +22,7 @@ _Delete a specific alpha tag._  ### Parameters  | Parameter | In | Type | Requir
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -95,7 +95,7 @@ _Get a specific alpha tag._  ### Parameters  | Parameter | In | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -169,7 +169,7 @@ List Alpha Tags
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -243,7 +243,7 @@ _Request to register an alpha tag. After requested, the alpha tag will be review
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

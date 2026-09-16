@@ -17,7 +17,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewAllTransactionsData.new(
   total: 2,

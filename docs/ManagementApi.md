@@ -20,7 +20,7 @@ _Get account information_  Refer to [Status Codes](/#status-codes) for definitio
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -92,7 +92,7 @@ _Get account usage_  | **Name** | **Type** | **Required** | **Restrictions** | *
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

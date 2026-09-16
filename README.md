@@ -36,7 +36,7 @@ This library is generated from ClickSend's official OpenAPI v3 specification and
 Add this to your Gemfile:
 
 ```ruby
-gem 'clicksend', :git => 'https://github.com/ClickSend/clicksend-ruby-v2.git'
+gem 'clicksend_client', :git => 'https://github.com/ClickSend/clicksend-ruby-v2.git'
 ```
 
 Then run:
@@ -57,7 +57,7 @@ export CLICKSEND_API_KEY="your-api-key"
 ## Quickstart
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 ClickSend.configure do |config|
   config.username = ENV['CLICKSEND_USERNAME']

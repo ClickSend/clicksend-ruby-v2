@@ -29,7 +29,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::Contact.new(
   contact_id: 552786,

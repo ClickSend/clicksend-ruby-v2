@@ -13,7 +13,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SendEmailCampaignData.new(
   totlal_count: 1,

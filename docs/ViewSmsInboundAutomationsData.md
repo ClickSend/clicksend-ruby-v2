@@ -21,7 +21,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewSmsInboundAutomationsData.new(
   total: 2,

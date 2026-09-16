@@ -20,7 +20,7 @@ _Create delivery Issue_  Create delivery Issue  ### Properties  | Name | Type | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -94,7 +94,7 @@ _Get all delivery issues_  Get all delivery issues  ### Parameters  | Parameter 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

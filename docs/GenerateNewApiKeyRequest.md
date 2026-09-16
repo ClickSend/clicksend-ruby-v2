@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::GenerateNewApiKeyRequest.new(
   access_sms: null,

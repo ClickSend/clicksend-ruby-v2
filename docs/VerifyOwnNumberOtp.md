@@ -15,7 +15,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::VerifyOwnNumberOtp.new(
   id: db630385-cb76-457d-8f16-76df1b394257,

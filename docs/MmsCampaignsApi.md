@@ -24,7 +24,7 @@ _Calculate price for mms campaign_  ### Properties  | Name | Type | Required | R
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -98,7 +98,7 @@ _Cancel mms campaign_  ### Parameters  | Parameter | In | Type | Required | Desc
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -174,7 +174,7 @@ _Create mms campaign_  ### Properties  | Name | Type | Required | Restrictions |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -248,7 +248,7 @@ _Update mms campaign_  ### Parameters  | Parameter | In | Type | Required | Desc
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -324,7 +324,7 @@ _Get list of mms campaigns_  ### Parameters  | Parameter | In | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -396,7 +396,7 @@ _Get specific mms campaign_  ### Parameters  | Parameter | In | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

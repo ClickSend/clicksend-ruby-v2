@@ -20,7 +20,7 @@ _Get sms statistics_   Refer to [Status Codes](/#status-codes) for definitions o
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -92,7 +92,7 @@ _Get voice statistics_  Refer to [Status Codes](/#status-codes) for definitions 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

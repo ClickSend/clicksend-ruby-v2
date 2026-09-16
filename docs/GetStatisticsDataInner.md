@@ -15,7 +15,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::GetStatisticsDataInner.new(
   long_url_id: quick_sms-26d1bc9a-d858-4b93-9368-1f31377a78c5-5908b13f05e7318be49bd1cb3a693d7c,

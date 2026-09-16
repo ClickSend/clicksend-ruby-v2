@@ -20,7 +20,7 @@ Use this endpoint to get the aggregated statistics for a shortened URL. This all
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -96,7 +96,7 @@ Use this endpoint to track how individual recipients interact with the link.  It
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

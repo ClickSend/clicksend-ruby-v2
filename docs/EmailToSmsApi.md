@@ -25,7 +25,7 @@ _Create email to sms allowed address_  ### Properties  | Name | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -99,7 +99,7 @@ _Create email to sms stripped string rule_  Create email to sms stripped string 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -173,7 +173,7 @@ _Delete email to sms stripped string rule_  Delete email to sms stripped string 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -247,7 +247,7 @@ _Update email to sms stripped string rule_  Update email to sms stripped string 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -323,7 +323,7 @@ _Get list of email to sms allowed addresses_  ### Parameters  | Parameter | In |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -395,7 +395,7 @@ _Get email to sms stripped string rule_  Get email to sms stripped string rule  
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -469,7 +469,7 @@ _Get list of email to sms stripped string rules_  Get list of email to sms strip
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

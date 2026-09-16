@@ -9,7 +9,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ListOwnNumbersMetadata.new(
   pagination: null

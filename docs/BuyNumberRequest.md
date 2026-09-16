@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::BuyNumberRequest.new(
   dedicated_number: +614197651956,

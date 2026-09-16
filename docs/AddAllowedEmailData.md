@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::AddAllowedEmailData.new(
   email_address_id: 107,

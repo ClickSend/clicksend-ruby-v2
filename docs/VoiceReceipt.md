@@ -18,7 +18,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::VoiceReceipt.new(
   timestamp_send: 1442381791,

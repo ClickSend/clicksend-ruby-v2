@@ -22,7 +22,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::EmailCampaignHistory.new(
   email_campaign_id: 77,

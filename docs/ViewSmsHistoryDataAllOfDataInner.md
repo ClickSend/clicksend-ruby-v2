@@ -33,7 +33,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewSmsHistoryDataAllOfDataInner.new(
   direction: out,

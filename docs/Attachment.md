@@ -13,7 +13,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::Attachment.new(
   file_name: null,

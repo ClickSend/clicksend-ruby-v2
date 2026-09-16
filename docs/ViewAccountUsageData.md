@@ -25,7 +25,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewAccountUsageData.new(
   sms: [{&quot;subaccount_id&quot;:1039,&quot;username&quot;:&quot;gerald&quot;,&quot;total_count&quot;:&quot;29.00&quot;,&quot;total_price&quot;:2.1337},{&quot;subaccount_id&quot;:1047,&quot;username&quot;:&quot;user5&quot;,&quot;total_count&quot;:&quot;4.00&quot;,&quot;total_price&quot;:0.308}],

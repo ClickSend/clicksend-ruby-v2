@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewTemplateCategoriesDataInner.new(
   category_id: 1,

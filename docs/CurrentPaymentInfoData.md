@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CurrentPaymentInfoData.new(
   display_number: XXXX-XXXX-XXXX-0000,

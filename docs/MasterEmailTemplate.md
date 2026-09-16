@@ -13,7 +13,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::MasterEmailTemplate.new(
   template_id_master: 57,

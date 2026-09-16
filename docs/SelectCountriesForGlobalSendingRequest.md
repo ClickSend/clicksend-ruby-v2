@@ -9,7 +9,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SelectCountriesForGlobalSendingRequest.new(
   country_list_ids: null

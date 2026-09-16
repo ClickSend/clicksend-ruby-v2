@@ -21,7 +21,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewListsData.new(
   total: 0,

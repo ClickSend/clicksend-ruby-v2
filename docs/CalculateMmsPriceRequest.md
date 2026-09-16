@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CalculateMmsPriceRequest.new(
   media_file: null,

@@ -16,7 +16,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CreateSmsInboundAutomationRequest.new(
   dedicated_number: null,

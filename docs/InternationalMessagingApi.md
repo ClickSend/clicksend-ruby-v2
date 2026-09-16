@@ -24,7 +24,7 @@ _Update Country Rule_  To agree on rules and regulations of selected countries a
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -91,7 +91,7 @@ _Get Countries for global sending_  Get the list of selected countries.  Refer t
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -158,7 +158,7 @@ _List of countries_  List of countries with IDs that can be used in selecting co
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -225,7 +225,7 @@ _Select Countries_  Use this endpoint to select countries that you intend to sen
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -297,7 +297,7 @@ _Get supported list of timezones._  Get supported list of timezones.  ### Parame
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -369,7 +369,7 @@ _Get all country codes_  Get all countries   Refer to [Status Codes](/#status-co
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 
 api_instance = ClickSend::InternationalMessagingApi.new
 

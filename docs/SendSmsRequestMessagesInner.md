@@ -19,7 +19,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SendSmsRequestMessagesInner.new(
   body: null,

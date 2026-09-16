@@ -30,7 +30,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::EmailCampaign.new(
   email_campaign_id: 64,

@@ -21,7 +21,7 @@ _Delete a contact_  ### Parameters  | Parameter | In | Type | Required | Descrip
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -97,7 +97,7 @@ _Get a specific contact_  ### Parameters  | Parameter | In | Type | Required | D
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -173,7 +173,7 @@ _Update specific contact_  ### Parameters  | Parameter | In | Type | Required | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

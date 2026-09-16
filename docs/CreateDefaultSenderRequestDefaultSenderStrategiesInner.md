@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CreateDefaultSenderRequestDefaultSenderStrategiesInner.new(
   sender_type: null,

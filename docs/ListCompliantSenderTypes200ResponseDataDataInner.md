@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ListCompliantSenderTypes200ResponseDataDataInner.new(
   recipient_country_code: null,

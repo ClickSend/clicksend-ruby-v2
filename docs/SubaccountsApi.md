@@ -24,7 +24,7 @@ _Create new subaccount_  ### Properties  | Name | Type | Required | Restrictions
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -98,7 +98,7 @@ _Delete a subaccount_  ### Parameters  | Parameter | In | Type | Required | Desc
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -172,7 +172,7 @@ _Regenerate an API Key_  ### Parameters  | Parameter | In | Type | Required | De
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -248,7 +248,7 @@ _Update subaccount_  ### Parameters  | Parameter | In | Type | Required | Descri
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -324,7 +324,7 @@ _Get specific subaccount_  ### Parameters  | Parameter | In | Type | Required | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -398,7 +398,7 @@ _Get all subaccounts_  ### Parameters  | Parameter | In | Type | Required | Desc
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

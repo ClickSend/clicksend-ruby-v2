@@ -31,7 +31,7 @@ _Copy contact to another list_  Copy contact to another list  ### Parameters  | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -111,7 +111,7 @@ _Create new contact list_  ### Parameters  | Parameter | In | Type | Required | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -185,7 +185,7 @@ _Create new contact_  ### parameters  | Parameter | In | Type | Required | Descr
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -261,7 +261,7 @@ _ListsByListIdDelete_  Delete a specific contact list  ### Parameters  | Paramet
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -335,7 +335,7 @@ _Import contacts to list_  ### Parameters  | Parameter | In | Type | Required | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -411,7 +411,7 @@ _Remove duplicate contacts_  ### Parameters  | Parameter | In | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -487,7 +487,7 @@ _Remove all opted out contacts_  ### Parameters  | Parameter | In | Type | Requi
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -565,7 +565,7 @@ _Transfer contact to another list_  Transfer contact to another list  ### Parame
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -645,7 +645,7 @@ _Update specific contact list_  ### Parameters  | Parameter | In | Type | Requir
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -721,7 +721,7 @@ _Get list of searched contact list_  ### Parameters  | Parameter | In | Type | R
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -792,7 +792,7 @@ _Get all contacts in a list_  ### parameters  | Parameter | In | Type | Required
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -866,7 +866,7 @@ _Get all contact lists_  ### Parameters  | Parameter | In | Type | Required | De
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -938,7 +938,7 @@ _Get specific contact list_  ### Parameters  | Parameter | In | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

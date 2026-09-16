@@ -48,7 +48,7 @@ Use this endpoint to calculate the price of sending messages. The cost of sendin
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -122,7 +122,7 @@ Use this endpoint to cancel all scheduled SMS. To cancel only one scheduled SMS,
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -196,7 +196,7 @@ Use this endpoint to cancel a specific scheduled SMS. Unlike the **Cancel All SM
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -270,7 +270,7 @@ _Create sms delivery receipt automations_  Create sms delivery receipt automatio
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -344,7 +344,7 @@ _Create new inbound sms automation_  Create new inbound sms automation  | Name |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -418,7 +418,7 @@ Use this endpoint to create a SMS template that you can use for sending SMS.
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -492,7 +492,7 @@ Use this endpoint to generate and send a test <a href=\"https://help.clicksend.c
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -566,7 +566,7 @@ Use this endpoint to generate and send a test <a href=\"https://help.clicksend.c
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -640,7 +640,7 @@ _Delete sms delivery receipt automation_  Delete sms delivery receipt automation
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -714,7 +714,7 @@ _Delete inbound sms automation_  Delete inbound sms automation  ### Parameters  
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -788,7 +788,7 @@ Use this endpoint to delete a <a href=\"https://help.clicksend.com/article/9z9ul
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -862,7 +862,7 @@ Use this endpoint to create a download link of your SMS history. You can filter 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -948,7 +948,7 @@ Use this endpoint to mark all <a href=\"https://help.clicksend.com/article/ik4hw
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1022,7 +1022,7 @@ Use this endpoint to mark all <a target=\"_blank\" href=\"https://help.clicksend
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1096,7 +1096,7 @@ Use this endpoint to mark a specific <a href=\"https://help.clicksend.com/articl
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1170,7 +1170,7 @@ Use this endpoint to send messages to your recipients, either as phone numbers o
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1244,7 +1244,7 @@ _Update sms delivery receipt automation_  Update sms delivery receipt automation
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1320,7 +1320,7 @@ _Update inbound sms automation_  Update inbound sms automation  ### Parameters  
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1396,7 +1396,7 @@ Use this endpoint to update a <a href=\"https://help.clicksend.com/article/9z9ul
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1472,7 +1472,7 @@ Use this endpoint to retrieve a specific inbound SMS, including those that have 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1546,7 +1546,7 @@ Use this endpoint to retrieve a <a href=\"https://help.clicksend.com/article/9z9
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1620,7 +1620,7 @@ Use this endpoint to retrieve <a href=\"https://help.clicksend.com/article/49eq1
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1696,7 +1696,7 @@ _Get specific sms delivery receipt automation_  Get specific sms delivery receip
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1770,7 +1770,7 @@ _Get all sms delivery receipt automations_  Get all sms delivery receipt automat
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1842,7 +1842,7 @@ Use this endpoint to view previously sent SMS. You can filter the SMS history re
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1926,7 +1926,7 @@ _Get specific inbound sms automation_  Get specific inbound sms automation  ### 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2000,7 +2000,7 @@ _Get all inbound sms automations_  Get all inbound sms automations  ### Paramete
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2072,7 +2072,7 @@ Use this endpoint to retrieve <a href=\"https://help.clicksend.com/article/49eq1
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2148,7 +2148,7 @@ Use this endpoint to retrieve <a href=\"https://help.clicksend.com/article/9z9ul
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2228,7 +2228,7 @@ Use this endpoint to retrieve a specific <a href=\"https://help.clicksend.com/ar
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SendEmailRequestFrom.new(
   email_address_id: null,

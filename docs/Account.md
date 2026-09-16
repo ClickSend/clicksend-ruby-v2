@@ -49,7 +49,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::Account.new(
   user_id: 116,

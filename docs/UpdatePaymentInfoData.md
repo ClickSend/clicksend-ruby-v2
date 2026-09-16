@@ -9,7 +9,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::UpdatePaymentInfoData.new(
   token: cus_6Z3mHM9QvQQoJ28WsIWuLA

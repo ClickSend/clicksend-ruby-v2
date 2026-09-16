@@ -24,7 +24,7 @@ _Delete a specific own numbers._  ### Parameters  | Parameter | In | Type | Requ
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -98,7 +98,7 @@ _Get a specific own numbers._  ### Parameters  | Parameter | In | Type | Require
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -172,7 +172,7 @@ _List own numbers._  ### Parameters  | Parameter | In | Type | Required | Descri
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -244,7 +244,7 @@ _Request to generate own number verification OTP_  ### Properties  | Name | Type
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -318,7 +318,7 @@ _Update details of a specific own numbers._  ### Parameters  | Parameter | In | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 
 api_instance = ClickSend::OwnNumbersApi.new
 own_number_id = 'own_number_id_example' # String | 
@@ -382,7 +382,7 @@ _Request to verify an OTP for Own Number verification_  ### Parameters  | Parame
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

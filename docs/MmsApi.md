@@ -22,7 +22,7 @@ _Get Price for MMS sent_  ### Properties  | Name | Type | Required | Restriction
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -96,7 +96,7 @@ _Export all mms history_  ### Parameters  | Parameter | In | Type | Required | D
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -180,7 +180,7 @@ _Send MMS_  You can post **up to 1000 messages** with each API call. You can sen
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -254,7 +254,7 @@ _Get all mms history_  ### Parameters  | Parameter | In | Type | Required | Desc
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

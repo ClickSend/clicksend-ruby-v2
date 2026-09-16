@@ -26,7 +26,7 @@ _Calculate voice price_  ### Properties  | Name | Type | Required | Restrictions
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -100,7 +100,7 @@ _Update all voice messages as cancelled_  Refer to [Status Codes](/#status-codes
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -174,7 +174,7 @@ _Update voice message status as cancelled_  ### Parameters  | Parameter | In | T
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -250,7 +250,7 @@ _Export voice history_  ### Parameters  | Parameter | In | Type | Required | Des
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -334,7 +334,7 @@ _Get all voice history_  ### Parameters  | Parameter | In | Type | Required | De
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -416,7 +416,7 @@ _Send voice message(s)_  Send TTS (Text-to-speech) voice calls  ### How many mes
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -490,7 +490,7 @@ _Get all voice languages_   Refer to [Status Codes](/#status-codes) for definiti
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -562,7 +562,7 @@ _Get all voice receipts_  **Push Delivery Receipts**  If you prefer, we can push
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

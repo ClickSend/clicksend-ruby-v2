@@ -51,7 +51,7 @@ _Calculate email campaign price_  Calculate email campaign price  ### Properties
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -125,7 +125,7 @@ _Get transactional email price_  Get transactional email price  ### Properties  
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -199,7 +199,7 @@ _Cancel email campaign_  Cancel email campaign  ### Parameters  | Parameter | In
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -275,7 +275,7 @@ _Create allowed Email Address_  Create allowed Email Address  ### Parameters  | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -349,7 +349,7 @@ _Create email delivery receipt automations_  Create email delivery receipt autom
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -423,7 +423,7 @@ _Create email template_  Create email template  ### Properties  | Name | Type | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -497,7 +497,7 @@ _Delete specific email address_  Delete specific email address  ### Parameters  
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -571,7 +571,7 @@ _Delete email delivery receipt automation_  Delete email delivery receipt automa
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -645,7 +645,7 @@ _Delete user email template_  Delete user email template  ### Parameters  | Para
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -719,7 +719,7 @@ _Export specific email campaign history_  Export specific email campaign history
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -792,7 +792,7 @@ _Export all Transactional Email history_  Export all Transactional Email history
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -864,7 +864,7 @@ _Send transactional email_  Send transactional email  ### Properties  | Name | T
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -938,7 +938,7 @@ _Send email campaign_  Send email campaign  ### Properties  | Name | Type | Requ
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1012,7 +1012,7 @@ _Send verification token_  Send verification token  ### Parameters  | Parameter 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1088,7 +1088,7 @@ _Edit email campaign_  Edit email campaign  ### Parameters  | Parameter | In | T
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1164,7 +1164,7 @@ _Update email delivery receipt automation_  Update email delivery receipt automa
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1240,7 +1240,7 @@ _Update email template_  Update email template  ### Parameters  | Parameter | In
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1316,7 +1316,7 @@ _Verify email address using verification token_  Verify email address using veri
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1394,7 +1394,7 @@ _Get all email campaigns_  Get all email campaigns  ### Parameters  | Parameter 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1466,7 +1466,7 @@ _Get specific email address_  Get specific email address  ### Parameters  | Para
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1540,7 +1540,7 @@ _Get all email addresses_  Get all email addresses  ### Parameters  | Parameter 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1612,7 +1612,7 @@ _Get specific email campaign_  Get specific email campaign  Refer to [Status Cod
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1686,7 +1686,7 @@ _Get specific email campaign history_  Get specific email campaign history   Ref
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1760,7 +1760,7 @@ _Get specific email delivery receipt automation_  Get specific email delivery re
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1834,7 +1834,7 @@ _Get all email delivery receipt automations_  Get all email delivery receipt aut
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1906,7 +1906,7 @@ _Get all transactional email history_  Get all transactional email history  ### 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -1978,7 +1978,7 @@ _Get specific user email template_  Get specific user email templates  ### Param
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2052,7 +2052,7 @@ _Get all user email templates_  Get all user email templates  ### Parameters  | 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2124,7 +2124,7 @@ _Get specific master email template_  Get specific master email template  ### Pa
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2198,7 +2198,7 @@ _Get all master email templates._  Get all master email templates.  ### Paramete
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2270,7 +2270,7 @@ _Get all master email template categories_  Get all master email template catego
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2342,7 +2342,7 @@ _Get specific master email template category_  Get specific master email templat
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -2416,7 +2416,7 @@ _Get all master email templates in a category_  Get all master email templates i
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

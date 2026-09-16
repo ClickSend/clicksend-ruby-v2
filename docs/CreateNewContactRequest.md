@@ -25,7 +25,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::CreateNewContactRequest.new(
   phone_number: null,

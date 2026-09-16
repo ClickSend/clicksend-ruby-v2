@@ -1,6 +1,6 @@
-# Migration Guide: clicksend_client (legacy) → clicksend (v2)
+# Migration Guide: clicksend_client (legacy) → clicksend_client (v2)
 
-This guide helps you migrate from the legacy ClickSend Ruby SDK (`clicksend_client`, module `ClickSendClient`) to the current v2 SDK (`clicksend`, module `ClickSend`). The two gems are **not drop-in compatible** — the gem name, module name, require path, method names, request/response shapes, and a large chunk of the API surface have all changed. Read this guide fully before upgrading, then use the class/method mapping tables to update your code.
+This guide helps you migrate from the legacy ClickSend Ruby SDK (`clicksend_client`, module `ClickSendClient`) to the current v2 SDK (also gem `clicksend_client`, module `ClickSend`). **The gem name is unchanged** — v2 reuses `clicksend_client` because `clicksend` is not available on RubyGems — but the two gems are **not drop-in compatible**: the module name, method names, request/response shapes, and a large chunk of the API surface have all changed. Because the gem name stays the same, `bundle update` will happily pull in v2 without warning you — there is no failed `require` to catch a stale integration, so read this guide fully before upgrading, then use the class/method mapping tables to update your code.
 
 ## Contents
 
@@ -30,7 +30,7 @@ The v2 SDK is generated fresh from ClickSend's current OpenAPI v3 specification 
 - Names methods after the endpoint's **operationId** (`send_sms`, `view_sms_history`, `export_sms_history`) instead of `resource` + verb.
 - Wraps every request body in a dedicated, single-purpose `*Request` model instead of reusing broad domain models — the `models/` folder went from 47 files to 383.
 - Deserializes every response into a specific per-operation model class (subclassing a shared `ApiModelBase`) with real accessor methods, instead of handing back a raw JSON string.
-- Renames the top-level module from **`ClickSendClient` to `ClickSend`** — this changes *every* namespaced reference in your code, e.g. `ClickSendClient::SMSApi` → `ClickSend::SmsApi`.
+- Renames the top-level module from **`ClickSendClient` to `ClickSend`** (the gem name itself, `clicksend_client`, is unchanged) — this changes *every* namespaced reference in your code, e.g. `ClickSendClient::SMSApi` → `ClickSend::SmsApi`.
 - Keeps `ApiError` as the exception class and `typhoeus` as the HTTP backend, but slims the runtime dependency list (drops the legacy's `json` and `addressable` gem dependencies) and adds a friendlier `ApiError#message`/`#to_s`.
 - Adds `Configuration` options for multi-server specs (`server_index`, `server_operation_index`, `server_variables`), a dynamic bearer-token getter (`access_token_getter`), and raw-binary response mode (`return_binary_data`).
 
@@ -40,10 +40,10 @@ None of this changes the underlying REST API — it's the same ClickSend v3 API 
 
 | | Legacy | v2 |
 |---|---|---|
-| Gem name | `clicksend_client` | `clicksend` |
+| Gem name | `clicksend_client` | `clicksend_client` (unchanged) |
 | Version at time of writing | `5.1.4` | `6.0.2` |
 | Ruby module | `ClickSendClient` | `ClickSend` |
-| Require statement | `require 'clicksend_client'` | `require 'clicksend'` |
+| Require statement | `require 'clicksend_client'` | `require 'clicksend_client'` (unchanged) |
 | Ruby version required | `>= 2.7` (gemspec) | `>= 2.7` (gemspec) — unchanged |
 | Runtime deps | `typhoeus ~> 1.4`, `json ~> 2.7`, `addressable ~> 2.8` | `typhoeus ~> 1.0` only |
 | Response validation | none (`String`) | typed model objects, deserialized per operation |
@@ -53,10 +53,10 @@ None of this changes the underlying REST API — it's the same ClickSend v3 API 
 gem 'clicksend_client', '~> 1.0.0'
 
 # Gemfile — after
-gem 'clicksend', git: 'https://github.com/ClickSend/clicksend-ruby-v2.git'
+gem 'clicksend_client', git: 'https://github.com/ClickSend/clicksend-ruby-v2.git'
 ```
 
-Because the gem name itself changes, `bundle update` alone won't do it — remove `clicksend_client`, add `clicksend`, run `bundle install`, then update every `ClickSendClient::` reference in your code to `ClickSend::`:
+**The gem name and require path do not change** — `clicksend` was not available to claim on RubyGems, so v2 ships under the same `clicksend_client` name as the legacy gem. This means `bundle update` (or bumping the version constraint) is enough to pull in v2 silently, with no failed `require` or missing-constant error to flag a stale integration. The only required rename is the **module**, from `ClickSendClient` to `ClickSend` — update every namespaced reference in your code:
 
 ```ruby
 # Legacy
@@ -65,12 +65,12 @@ ClickSendClient.configure { |c| ... }
 ClickSendClient::SMSApi.new
 
 # v2
-require 'clicksend'
+require 'clicksend_client'
 ClickSend.configure { |c| ... }
 ClickSend::SmsApi.new
 ```
 
-The v2 gem is not (yet) published as a versioned release on RubyGems in the sources reviewed for this guide — install it straight from GitHub via the `git:` Gemfile option shown above, or vendor it locally. Confirm the current distribution channel for your account before changing a `Gemfile.lock` in production.
+The v2 gem is not (yet) published as a versioned release on RubyGems in the sources reviewed for this guide — install it straight from GitHub via the `git:` Gemfile option shown above, or vendor it locally. Confirm the current distribution channel for your account before changing a `Gemfile.lock` in production. Because a plain version bump on the same gem name pulls in a fully incompatible API surface, pin your `Gemfile` to an exact legacy version (or a `~>` constraint that can't cross the major bump) until you've completed this migration.
 
 ## 3. Authentication & client setup
 
@@ -404,7 +404,7 @@ Client-wide options remain on `Configuration`: `config.timeout = 30` for a reque
 | `ContactListApi#lists_remove_duplicates_by_list_id_put` | `ListsApi#remove_duplicate_contacts` |
 | `SearchApi#search_contacts_lists_get` | `ListsApi#view_contact_lists` |
 
-> **Correction:** an earlier draft of this guide claimed `SearchApi` had no v2 equivalent. That was wrong — `search_contacts_lists_get` maps directly onto `ListsApi#view_contact_lists`, confirmed present in the generated `lib/clicksend/api/lists_api.rb`.
+> **Correction:** an earlier draft of this guide claimed `SearchApi` had no v2 equivalent. That was wrong — `search_contacts_lists_get` maps directly onto `ListsApi#view_contact_lists`, confirmed present in the generated `lib/clicksend_client/api/lists_api.rb`.
 
 ### Account & billing
 
@@ -664,8 +664,8 @@ No legacy counterpart at all — nothing to migrate, but worth knowing they exis
 
 ## 15. Step-by-step migration checklist
 
-1. **Swap the dependency**: remove `gem 'clicksend_client'` from your Gemfile, add `gem 'clicksend', git: 'https://github.com/ClickSend/clicksend-ruby-v2.git'`, run `bundle install` (confirm the current distribution channel for your account first — see [§2](#2-installation--imports)).
-2. **Rename the require**: `require 'clicksend_client'` → `require 'clicksend'` everywhere.
+1. **Update the dependency source**: the gem name (`clicksend_client`) doesn't change, but point it at the v2 source — `gem 'clicksend_client', git: 'https://github.com/ClickSend/clicksend-ruby-v2.git'` — and run `bundle install` (confirm the current distribution channel for your account first — see [§2](#2-installation--imports)).
+2. **The require statement doesn't change** (`require 'clicksend_client'` in both versions) — don't assume a successful `require` means you're still on the legacy API.
 3. **Rename every module reference**: `ClickSendClient::` → `ClickSend::`, including `ClickSendClient.configure` → `ClickSend.configure` and every `*Api.new` (`SMSApi` → `SmsApi`, `MMSApi` → `MmsApi`, …). **Pay special attention to `VoiceApi` → `VoiceMessagingApi`** ([§12](#12-the-voice-naming-trap-read-this-before-touching-voice-code)).
 4. **Re-check any custom `config.base_path` / `config.host` overrides** against v2's defaults ([§4](#4-base-path--url-changes)).
 5. **Rebuild every request payload** with the matching `*Request` model (or a plain nested `Hash`), and pass it as a **named key inside the `opts` hash** rather than as a positional argument ([§6](#6-request-payloads-request-models-replace-reusable-domain-models)). Path/ID parameters (e.g. `list_id`, `template_id`) stay positional.

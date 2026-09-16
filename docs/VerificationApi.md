@@ -20,7 +20,7 @@ _Forgot password_  A user can send their username to this endpoint to be sent an
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -94,7 +94,7 @@ _Forgot username_  Requires the user to pass either the email registered to an a
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

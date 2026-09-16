@@ -13,7 +13,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::RequestAlphaTagRequestBusinessesInnerBusinessAddress.new(
   addr_line1: null,

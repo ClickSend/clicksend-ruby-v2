@@ -12,7 +12,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewAllTransactionsDataAllOfDataInner.new(
   invoice_number: cb726c65-1c65-47fa-aea2-3ded9ed57557,

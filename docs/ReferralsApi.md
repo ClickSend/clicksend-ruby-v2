@@ -19,7 +19,7 @@ _Get all referral accounts_  ### Parameters  | Parameter | In | Type | Required 
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

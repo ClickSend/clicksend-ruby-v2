@@ -9,7 +9,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::GenerateNewApiKeyData.new(
   api_key: E72D09F6-AC80-0A5C-F7F0-1A244A377A5C

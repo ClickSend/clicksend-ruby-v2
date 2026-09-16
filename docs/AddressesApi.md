@@ -23,7 +23,7 @@ _Create post return address_  ### Properties  | Name | Type | Required | Restric
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -97,7 +97,7 @@ _Delete specific post return address_  ### Parameters  | Parameter | In | Type |
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -171,7 +171,7 @@ _Update post return address_  ### Parameters  | Parameter | In | Type | Required
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -247,7 +247,7 @@ _Get specific post return address_  ### Parameters  | Parameter | In | Type | Re
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth
@@ -321,7 +321,7 @@ _Get list of post return addresses_  ### Parameters  | Parameter | In | Type | R
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

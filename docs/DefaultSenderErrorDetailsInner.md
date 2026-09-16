@@ -10,7 +10,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::DefaultSenderErrorDetailsInner.new(
   field: default_sender_strategies[0].sender_id,

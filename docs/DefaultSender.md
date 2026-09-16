@@ -17,7 +17,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::DefaultSender.new(
   id: f99872cc-11a6-48ba-a9f2-bcfb6dd1e3d4,

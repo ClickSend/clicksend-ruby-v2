@@ -11,7 +11,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::ViewVoiceStatisticsDataStatsInner.new(
   date: 1441065600,

@@ -18,7 +18,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SmsInboundRule.new(
   inbound_rule_id: 10,

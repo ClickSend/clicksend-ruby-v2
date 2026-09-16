@@ -27,7 +27,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::SmsSendSms.new(
   direction: in,

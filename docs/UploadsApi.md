@@ -19,7 +19,7 @@ The `upload` endpoint provides a method for converting files from an unsupported
 
 ```ruby
 require 'time'
-require 'clicksend'
+require 'clicksend_client'
 # setup authorization
 ClickSend.configure do |config|
   # Configure HTTP basic authorization: basicAuth

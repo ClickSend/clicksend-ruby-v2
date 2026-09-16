@@ -26,7 +26,7 @@
 ## Example
 
 ```ruby
-require 'clicksend'
+require 'clicksend_client'
 
 instance = ClickSend::GlobalSending.new(
   id: 1,

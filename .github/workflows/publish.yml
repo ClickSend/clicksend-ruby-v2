@@ -17,11 +17,11 @@ jobs:
           ruby-version: '4.0'
           bundler-cache: true
 
-      - name: Build
-        run: gem build *.gemspec
-
       - name: Test
         run: bundle exec rake spec
+
+      - name: Build
+        run: gem build *.gemspec
 
   # Public registry: RubyGems.org (https://rubygems.org/gems/clicksend_client)
   publish-rubygems:

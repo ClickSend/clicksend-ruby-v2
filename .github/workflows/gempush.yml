@@ -1,0 +1,43 @@
+name: Ruby Gem
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build + Publish
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+    - name: Set up Ruby 4.0
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '4.0'
+        bundler-cache: true
+
+    - name: Publish to Github
+      run: |
+        mkdir -p $HOME/.gem
+        touch $HOME/.gem/credentials
+        chmod 0600 $HOME/.gem/credentials
+        printf -- "---\n:github: Bearer ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+        sudo chmod -R go-w /opt
+        sudo chmod -R go-w /usr/share
+        gem build *.gemspec
+        gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} *.gem
+      env:
+        GEM_HOST_API_KEY: ${{secrets.GPR_AUTH_TOKEN}}
+        OWNER: ClickSend
+
+    - name: Publish to RubyGems
+      uses: rubygems/release-gem@v1
